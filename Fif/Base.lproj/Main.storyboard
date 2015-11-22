@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="499-42-d0g">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="dEh-eV-dlg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFW-Nd-Df7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="499-42-d0g" customClass="GameViewController" customModule="Fif" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TiC-Vw-u93"/>
+                        <viewControllerLayoutGuide type="bottom" id="3TX-uQ-fmp"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="weF-Pa-zaM">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yaX-A2-MfE">
+                                <rect key="frame" x="420" y="0.0" width="1080" height="1080"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yaX-A2-MfE" secondAttribute="height" multiplier="1:1" id="KOJ-Gk-7kz"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="oZW-lC-vnY">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="puzzlePiece" id="u6a-fc-D89" customClass="PuzzleCollectionViewCell" customModule="Fif" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw0-en-WVF">
+                                                    <rect key="frame" x="139" y="120" width="23" height="60"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lw0-en-WVF" firstAttribute="centerY" secondItem="u6a-fc-D89" secondAttribute="centerY" id="mOw-E5-7xU"/>
+                                            <constraint firstItem="lw0-en-WVF" firstAttribute="centerX" secondItem="u6a-fc-D89" secondAttribute="centerX" id="vwT-qe-Ooc"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="300"/>
+                                        <connections>
+                                            <outlet property="_numberLabel" destination="lw0-en-WVF" id="Mc0-gP-Txb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="499-42-d0g" id="x47-b5-B5D"/>
+                                    <outlet property="delegate" destination="499-42-d0g" id="org-wv-ohg"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omV-nu-aJf">
+                                <rect key="frame" x="50" y="50" width="205" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="reload:" destination="499-42-d0g" eventType="primaryActionTriggered" id="tXc-gg-AqQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="yaX-A2-MfE" firstAttribute="top" secondItem="TiC-Vw-u93" secondAttribute="bottom" id="3ov-wn-Vze"/>
+                            <constraint firstItem="omV-nu-aJf" firstAttribute="leading" secondItem="weF-Pa-zaM" secondAttribute="leading" constant="50" id="GRt-CH-fhh"/>
+                            <constraint firstItem="omV-nu-aJf" firstAttribute="top" secondItem="TiC-Vw-u93" secondAttribute="bottom" constant="50" id="Kkf-Nh-vED"/>
+                            <constraint firstItem="yaX-A2-MfE" firstAttribute="centerX" secondItem="weF-Pa-zaM" secondAttribute="centerX" id="W8W-nE-DUr"/>
+                            <constraint firstItem="3TX-uQ-fmp" firstAttribute="top" secondItem="yaX-A2-MfE" secondAttribute="bottom" id="oy0-AI-p3U"/>
+                            <constraint firstItem="yaX-A2-MfE" firstAttribute="centerY" secondItem="weF-Pa-zaM" secondAttribute="centerY" id="x5p-zW-i49"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="puzzleCollectionView" destination="yaX-A2-MfE" id="t5t-X2-o21"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="651" y="554"/>
+        </scene>
+    </scenes>
+</document>

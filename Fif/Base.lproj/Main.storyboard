@@ -39,6 +39,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQq-TT-q1G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                    <animations/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw0-en-WVF">
                                                     <rect key="frame" x="139" y="120" width="23" height="60"/>
                                                     <animations/>
@@ -52,12 +56,17 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="QQq-TT-q1G" firstAttribute="leading" secondItem="u6a-fc-D89" secondAttribute="leading" id="eBh-vc-roX"/>
+                                            <constraint firstAttribute="bottom" secondItem="QQq-TT-q1G" secondAttribute="bottom" id="fUl-kp-NIc"/>
+                                            <constraint firstItem="QQq-TT-q1G" firstAttribute="top" secondItem="u6a-fc-D89" secondAttribute="top" id="jCf-ry-fQn"/>
+                                            <constraint firstAttribute="trailing" secondItem="QQq-TT-q1G" secondAttribute="trailing" id="kaR-vq-LFI"/>
                                             <constraint firstItem="lw0-en-WVF" firstAttribute="centerY" secondItem="u6a-fc-D89" secondAttribute="centerY" id="mOw-E5-7xU"/>
                                             <constraint firstItem="lw0-en-WVF" firstAttribute="centerX" secondItem="u6a-fc-D89" secondAttribute="centerX" id="vwT-qe-Ooc"/>
                                         </constraints>
                                         <size key="customSize" width="300" height="300"/>
                                         <connections>
                                             <outlet property="_numberLabel" destination="lw0-en-WVF" id="Mc0-gP-Txb"/>
+                                            <outlet property="puzzlePieceImageView" destination="QQq-TT-q1G" id="uhZ-OW-a0C"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

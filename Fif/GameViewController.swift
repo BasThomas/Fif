@@ -36,11 +36,11 @@ extension GameViewController {
 extension GameViewController: UICollectionViewDataSource {
   
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-    return 1
+    return game._rows
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return pow(game._rows, 2)
+    return game._rows
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -48,12 +48,15 @@ extension GameViewController: UICollectionViewDataSource {
   }
   
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-    // Check if the cell is of type `PuzzleCollectionViewCell`.
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
-    // Check if it's not the collectionView's last cell; this one should be empty.
-    guard indexPath.row != collectionView.numberOfItemsInSection(indexPath.section) - 1 else { return cell.empty() }
-    cell.backgroundColor = .randomColor()
-    cell._numberLabel.text = "\(indexPath.row + 1)"
+    cell.tileNumber = 1 + indexPath.row + (indexPath.section * game._rows)
+    cell.puzzlePieceImageView.backgroundColor = .randomColor()
+    guard cell.tileNumber != pow(game._rows, 2) else { return cell.empty() }
+  }
+  
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? PuzzleCollectionViewCell else { return }
+    print(cell.tileNumber)
   }
 }
 

@@ -12,11 +12,11 @@ class GameViewController: UIViewController {
   
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
   
-  var game: Game!
+  var puzzle: Puzzle!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    game = Game(difficulty: .Normal)
+    puzzle = Puzzle(type: .MountainRange, difficulty: .Normal)
   }
   
   override func didReceiveMemoryWarning() {
@@ -36,11 +36,11 @@ extension GameViewController {
 extension GameViewController: UICollectionViewDataSource {
   
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-    return game._rows
+    return puzzle._rows
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return game._rows
+    return puzzle._rows
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -49,15 +49,15 @@ extension GameViewController: UICollectionViewDataSource {
   
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
-    cell.tileNumber = 1 + indexPath.row + (indexPath.section * game._rows)
+    cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle._rows)
     if let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame {
-      let image = UIImage(named: "puzzle1")?.crop(toRect: CGRect(
+      let image = UIImage(puzzle: puzzle)?.crop(toRect: CGRect(
         origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
         size: CGSize(width: cellFrame.width, height: cellFrame.height)))
       
       cell.puzzlePieceImageView.image = image
     }
-    guard cell.tileNumber != pow(game._rows, 2) else { return cell.empty() }
+    guard cell.tileNumber != pow(puzzle._rows, 2) else { return cell.empty() }
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -70,7 +70,7 @@ extension GameViewController: UICollectionViewDataSource {
 extension GameViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    let width = puzzleCollectionView.frame.size.width / CGFloat(game._rows)
+    let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle._rows)
     return CGSize(width: width, height: width)
   }
 }

@@ -15,4 +15,8 @@ extension UIImage {
     let cropped = UIImage(CGImage: imageRef)
     return cropped
   }
+  
+  convenience init?(puzzle: Puzzle) {
+    self.init(named: puzzle.puzzleType.rawValue)
+  }
 }

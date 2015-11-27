@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  Puzzle.swift
 //  Fif
 //
 //  Created by Bas Broek on 22/11/15.
@@ -8,14 +8,22 @@
 
 import Foundation
 
-struct Game {
+struct Puzzle {
+  var puzzleType: PuzzleType
   var difficulty: Difficulty
-  var _rows: Int
+  private (set) var _rows: Int
   
-  init(difficulty: Difficulty) {
+  init(type puzzleType: PuzzleType, difficulty: Difficulty) {
+    self.puzzleType = puzzleType
     self.difficulty = difficulty
     self._rows = difficulty.rawValue
   }
+}
+
+enum PuzzleType: String {
+  case Escher
+  case ElCapitan
+  case MountainRange
 }
 
 enum Difficulty: Int {

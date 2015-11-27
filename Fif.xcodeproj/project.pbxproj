@@ -7,35 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49ADD9711C024C54008D9B91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9701C024C54008D9B91 /* AppDelegate.swift */; };
-		49ADD9791C024C54008D9B91 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD9781C024C54008D9B91 /* Game.xcassets */; };
+		4981BA651C0891C3005D83E4 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA641C0891C3005D83E4 /* Puzzle.swift */; };
+		4981BA671C0891E8005D83E4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */; };
+		4981BA691C0891EF005D83E4 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA681C0891EF005D83E4 /* Math.swift */; };
+		4981BA6B1C0891FB005D83E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA6A1C0891FB005D83E4 /* Constants.swift */; };
+		4981BA6C1C0891FB005D83E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA6A1C0891FB005D83E4 /* Constants.swift */; };
+		4981BA6D1C089202005D83E4 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA681C0891EF005D83E4 /* Math.swift */; };
+		4981BA6E1C089204005D83E4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */; };
+		4981BA6F1C089207005D83E4 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA641C0891C3005D83E4 /* Puzzle.swift */; };
+		4981BA721C08923A005D83E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4981BA711C08923A005D83E4 /* Assets.xcassets */; };
+		4981BA731C08923A005D83E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4981BA711C08923A005D83E4 /* Assets.xcassets */; };
+		4981BA7A1C0892A0005D83E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA791C0892A0005D83E4 /* AppDelegate.swift */; };
 		49ADD97C1C024C54008D9B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD97A1C024C54008D9B91 /* Main.storyboard */; };
 		49ADD97E1C024C54008D9B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD97D1C024C54008D9B91 /* Assets.xcassets */; };
 		49ADD9911C025622008D9B91 /* PuzzleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */; };
-		49CF66BF1C088D63007A9A8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66BC1C088D63007A9A8A /* Constants.swift */; };
-		49CF66C01C088D63007A9A8A /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66BD1C088D63007A9A8A /* Math.swift */; };
-		49CF66C11C088D63007A9A8A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66BE1C088D63007A9A8A /* UIImage+Extension.swift */; };
-		49CF66C31C088D71007A9A8A /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66C21C088D71007A9A8A /* Puzzle.swift */; };
 		49CF66C51C088D97007A9A8A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66C41C088D97007A9A8A /* GameViewController.swift */; };
+		49CF66D21C089098007A9A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66D11C089098007A9A8A /* AppDelegate.swift */; };
+		49CF66D71C089098007A9A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66D51C089098007A9A8A /* Main.storyboard */; };
+		49CF66D91C089098007A9A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66D81C089098007A9A8A /* Assets.xcassets */; };
+		49CF66DC1C089098007A9A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66DA1C089098007A9A8A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49ADD96D1C024C53008D9B91 /* Fif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fif.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49ADD9701C024C54008D9B91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49ADD9781C024C54008D9B91 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		4981BA641C0891C3005D83E4 /* Puzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Puzzle.swift; path = Shared/Puzzle.swift; sourceTree = "<group>"; };
+		4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "Shared/UIImage+Extension.swift"; sourceTree = "<group>"; };
+		4981BA681C0891EF005D83E4 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Math.swift; path = Shared/Math.swift; sourceTree = "<group>"; };
+		4981BA6A1C0891FB005D83E4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Shared/Constants.swift; sourceTree = "<group>"; };
+		4981BA711C08923A005D83E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Shared/Assets.xcassets; sourceTree = "<group>"; };
+		4981BA791C0892A0005D83E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49ADD96D1C024C53008D9B91 /* Fif-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fif-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ADD97B1C024C54008D9B91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49ADD97D1C024C54008D9B91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49ADD97F1C024C54008D9B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleCollectionViewCell.swift; sourceTree = "<group>"; };
-		49CF66BC1C088D63007A9A8A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		49CF66BD1C088D63007A9A8A /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
-		49CF66BE1C088D63007A9A8A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		49CF66C21C088D71007A9A8A /* Puzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		49CF66C41C088D97007A9A8A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		49CF66CF1C089098007A9A8A /* Fif-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fif-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CF66D11C089098007A9A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49CF66D61C089098007A9A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49CF66D81C089098007A9A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49CF66DB1C089098007A9A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49CF66DD1C089098007A9A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		49ADD96A1C024C53008D9B91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CF66CC1C089098007A9A8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,7 +70,7 @@
 		49ADD9641C024C53008D9B91 = {
 			isa = PBXGroup;
 			children = (
-				49ADD96F1C024C53008D9B91 /* Fif */,
+				49CF66C61C089002007A9A8A /* Fif */,
 				49ADD96E1C024C53008D9B91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,33 +78,95 @@
 		49ADD96E1C024C53008D9B91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49ADD96D1C024C53008D9B91 /* Fif.app */,
+				49ADD96D1C024C53008D9B91 /* Fif-tvOS.app */,
+				49CF66CF1C089098007A9A8A /* Fif-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49ADD96F1C024C53008D9B91 /* Fif */ = {
+		49ADD96F1C024C53008D9B91 /* Fif-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				49ADD9701C024C54008D9B91 /* AppDelegate.swift */,
+				4981BA791C0892A0005D83E4 /* AppDelegate.swift */,
 				49ADD97A1C024C54008D9B91 /* Main.storyboard */,
 				49CF66C41C088D97007A9A8A /* GameViewController.swift */,
 				49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */,
-				49CF66C21C088D71007A9A8A /* Puzzle.swift */,
 				49ADD9871C024C78008D9B91 /* Supporting Files */,
 			);
-			path = Fif;
+			path = "Fif-tvOS";
 			sourceTree = "<group>";
 		};
 		49ADD9871C024C78008D9B91 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49CF66BC1C088D63007A9A8A /* Constants.swift */,
-				49CF66BD1C088D63007A9A8A /* Math.swift */,
-				49CF66BE1C088D63007A9A8A /* UIImage+Extension.swift */,
-				49ADD9781C024C54008D9B91 /* Game.xcassets */,
 				49ADD97D1C024C54008D9B91 /* Assets.xcassets */,
 				49ADD97F1C024C54008D9B91 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49CF66C61C089002007A9A8A /* Fif */ = {
+			isa = PBXGroup;
+			children = (
+				49CF66C71C08900C007A9A8A /* Shared */,
+				49ADD96F1C024C53008D9B91 /* Fif-tvOS */,
+				49CF66D01C089098007A9A8A /* Fif-iOS */,
+			);
+			name = Fif;
+			sourceTree = "<group>";
+		};
+		49CF66C71C08900C007A9A8A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				49CF66C81C08903F007A9A8A /* Model */,
+				49CF66C91C08904A007A9A8A /* Extensions */,
+				49CF66CA1C089063007A9A8A /* Supporting Files */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		49CF66C81C08903F007A9A8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4981BA641C0891C3005D83E4 /* Puzzle.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49CF66C91C08904A007A9A8A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */,
+				4981BA681C0891EF005D83E4 /* Math.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		49CF66CA1C089063007A9A8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4981BA6A1C0891FB005D83E4 /* Constants.swift */,
+				4981BA711C08923A005D83E4 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49CF66D01C089098007A9A8A /* Fif-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				49CF66D11C089098007A9A8A /* AppDelegate.swift */,
+				49CF66D51C089098007A9A8A /* Main.storyboard */,
+				49CF66E11C0890FC007A9A8A /* Supporting Files */,
+			);
+			path = "Fif-iOS";
+			sourceTree = "<group>";
+		};
+		49CF66E11C0890FC007A9A8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49CF66D81C089098007A9A8A /* Assets.xcassets */,
+				49CF66DA1C089098007A9A8A /* LaunchScreen.storyboard */,
+				49CF66DD1C089098007A9A8A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -90,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49ADD96C1C024C53008D9B91 /* Fif */ = {
+		49ADD96C1C024C53008D9B91 /* Fif-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49ADD9821C024C54008D9B91 /* Build configuration list for PBXNativeTarget "Fif" */;
+			buildConfigurationList = 49ADD9821C024C54008D9B91 /* Build configuration list for PBXNativeTarget "Fif-tvOS" */;
 			buildPhases = (
 				49ADD9691C024C53008D9B91 /* Sources */,
 				49ADD96A1C024C53008D9B91 /* Frameworks */,
@@ -102,9 +186,26 @@
 			);
 			dependencies = (
 			);
-			name = Fif;
+			name = "Fif-tvOS";
 			productName = Fif;
-			productReference = 49ADD96D1C024C53008D9B91 /* Fif.app */;
+			productReference = 49ADD96D1C024C53008D9B91 /* Fif-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49CF66CE1C089098007A9A8A /* Fif-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49CF66DE1C089098007A9A8A /* Build configuration list for PBXNativeTarget "Fif-iOS" */;
+			buildPhases = (
+				49CF66CB1C089098007A9A8A /* Sources */,
+				49CF66CC1C089098007A9A8A /* Frameworks */,
+				49CF66CD1C089098007A9A8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fif-iOS";
+			productName = "Fif-iOS";
+			productReference = 49CF66CF1C089098007A9A8A /* Fif-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,6 +219,9 @@
 				ORGANIZATIONNAME = "Bas Broek";
 				TargetAttributes = {
 					49ADD96C1C024C53008D9B91 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					49CF66CE1C089098007A9A8A = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
@@ -135,7 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49ADD96C1C024C53008D9B91 /* Fif */,
+				49ADD96C1C024C53008D9B91 /* Fif-tvOS */,
+				49CF66CE1C089098007A9A8A /* Fif-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -147,7 +252,18 @@
 			files = (
 				49ADD97C1C024C54008D9B91 /* Main.storyboard in Resources */,
 				49ADD97E1C024C54008D9B91 /* Assets.xcassets in Resources */,
-				49ADD9791C024C54008D9B91 /* Game.xcassets in Resources */,
+				4981BA721C08923A005D83E4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CF66CD1C089098007A9A8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CF66DC1C089098007A9A8A /* LaunchScreen.storyboard in Resources */,
+				49CF66D91C089098007A9A8A /* Assets.xcassets in Resources */,
+				49CF66D71C089098007A9A8A /* Main.storyboard in Resources */,
+				4981BA731C08923A005D83E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +275,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CF66C51C088D97007A9A8A /* GameViewController.swift in Sources */,
-				49CF66BF1C088D63007A9A8A /* Constants.swift in Sources */,
-				49CF66C31C088D71007A9A8A /* Puzzle.swift in Sources */,
-				49CF66C11C088D63007A9A8A /* UIImage+Extension.swift in Sources */,
-				49ADD9711C024C54008D9B91 /* AppDelegate.swift in Sources */,
+				4981BA651C0891C3005D83E4 /* Puzzle.swift in Sources */,
+				4981BA671C0891E8005D83E4 /* UIImage+Extension.swift in Sources */,
 				49ADD9911C025622008D9B91 /* PuzzleCollectionViewCell.swift in Sources */,
-				49CF66C01C088D63007A9A8A /* Math.swift in Sources */,
+				4981BA7A1C0892A0005D83E4 /* AppDelegate.swift in Sources */,
+				4981BA691C0891EF005D83E4 /* Math.swift in Sources */,
+				4981BA6B1C0891FB005D83E4 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CF66CB1C089098007A9A8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4981BA6F1C089207005D83E4 /* Puzzle.swift in Sources */,
+				49CF66D21C089098007A9A8A /* AppDelegate.swift in Sources */,
+				4981BA6C1C0891FB005D83E4 /* Constants.swift in Sources */,
+				4981BA6D1C089202005D83E4 /* Math.swift in Sources */,
+				4981BA6E1C089204005D83E4 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +305,22 @@
 				49ADD97B1C024C54008D9B91 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49CF66D51C089098007A9A8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49CF66D61C089098007A9A8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49CF66DA1C089098007A9A8A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49CF66DB1C089098007A9A8A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -268,9 +412,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = Fif/Info.plist;
+				INFOPLIST_FILE = "Fif-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nl.basbroek.Fif;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -280,10 +424,41 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = Fif/Info.plist;
+				INFOPLIST_FILE = "Fif-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nl.basbroek.Fif;
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49CF66DF1C089098007A9A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Fif-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49CF66E01C089098007A9A8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Fif-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -299,11 +474,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49ADD9821C024C54008D9B91 /* Build configuration list for PBXNativeTarget "Fif" */ = {
+		49ADD9821C024C54008D9B91 /* Build configuration list for PBXNativeTarget "Fif-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49ADD9831C024C54008D9B91 /* Debug */,
 				49ADD9841C024C54008D9B91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49CF66DE1C089098007A9A8A /* Build configuration list for PBXNativeTarget "Fif-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CF66DF1C089098007A9A8A /* Debug */,
+				49CF66E01C089098007A9A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

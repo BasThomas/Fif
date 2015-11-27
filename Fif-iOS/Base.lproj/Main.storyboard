@@ -3,25 +3,104 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Fif_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-x8-OXh">
+                                <rect key="frame" x="200" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5ah-x8-OXh" secondAttribute="height" multiplier="1:1" id="9CC-PB-K4H"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ghU-Ya-Vud">
+                                    <size key="itemSize" width="300" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="puzzlePiece" id="I9Z-9r-Rk1" customClass="PuzzleCollectionViewCell" customModule="Fif_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDU-xX-izp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="RDU-xX-izp" secondAttribute="bottom" id="h1v-mg-6SP"/>
+                                            <constraint firstItem="RDU-xX-izp" firstAttribute="leading" secondItem="I9Z-9r-Rk1" secondAttribute="leading" id="jbN-de-T67"/>
+                                            <constraint firstItem="RDU-xX-izp" firstAttribute="top" secondItem="I9Z-9r-Rk1" secondAttribute="top" id="vrr-ER-HqX"/>
+                                            <constraint firstAttribute="trailing" secondItem="RDU-xX-izp" secondAttribute="trailing" id="wYz-lO-RNn"/>
+                                        </constraints>
+                                        <size key="customSize" width="300" height="300"/>
+                                        <connections>
+                                            <outlet property="puzzlePieceImageView" destination="RDU-xX-izp" id="EKW-uR-OOc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="owV-lE-y8F"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LOf-1G-TAX"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVd-ns-fRM">
+                                <rect key="frame" x="20" y="20" width="50" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crO-Er-u2m"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5ah-x8-OXh" secondAttribute="bottom" id="GDx-G2-rTK"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="200" id="Ike-SU-LPQ"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kv4-vK-phk"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PBJ-vz-wE1"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a6W-FT-Juk"/>
+                            <constraint firstItem="xVd-ns-fRM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fiH-H0-Y7j"/>
+                            <constraint firstAttribute="trailing" secondItem="5ah-x8-OXh" secondAttribute="trailing" constant="200" id="whj-N3-7iy"/>
+                            <constraint firstItem="xVd-ns-fRM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zGK-xj-Vff"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1000" height="600"/>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="GDx-G2-rTK" id="OLD-uc-Zyb"/>
+                        <outlet property="leadingConstraint" destination="Ike-SU-LPQ" id="XZV-Hr-5Xz"/>
+                        <outlet property="puzzleCollectionView" destination="5ah-x8-OXh" id="2v5-zW-ynh"/>
+                        <outlet property="topConstraint" destination="PBJ-vz-wE1" id="gq2-nx-Xvv"/>
+                        <outlet property="trailingConstraint" destination="whj-N3-7iy" id="GEt-lz-7ch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="429"/>
         </scene>
     </scenes>
 </document>

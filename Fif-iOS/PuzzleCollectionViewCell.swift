@@ -2,14 +2,14 @@
 //  PuzzleCollectionViewCell.swift
 //  Fif
 //
-//  Created by Bas Broek on 22/11/15.
+//  Created by Bas Broek on 27/11/15.
 //  Copyright © 2015 Bas Broek. All rights reserved.
 //
 
 import UIKit
 
 class PuzzleCollectionViewCell: UICollectionViewCell {
-    
+  
   @IBOutlet weak var puzzlePieceImageView: UIImageView!
   
   var tileNumber: Int = -1
@@ -27,24 +27,30 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   }
   
   func focus() {
-    puzzlePieceImageView.alpha = 0.5
+    UIView.animateWithDuration(0.8) {
+      self.puzzlePieceImageView.alpha = 0.5
+    }
   }
   
   func unfocus() {
-    puzzlePieceImageView.alpha = 1.0
+    UIView.animateWithDuration(0.8) {
+      self.puzzlePieceImageView.alpha = 1.0
+    }
   }
 }
 
-// MARK: - UIFocusEnvironment
+// MARK: - Highlight+Select
 extension PuzzleCollectionViewCell {
   
-  override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
-    coordinator.addCoordinatedAnimations({
-      if self.focused {
-        self.focus()
-      } else {
-        self.unfocus()
-      }
-    }, completion: nil)
+  override var highlighted: Bool {
+    didSet {
+      highlighted ? focus() : unfocus()
+    }
+  }
+  
+  override var selected: Bool {
+    didSet {
+      selected ? focus() : unfocus()
+    }
   }
 }

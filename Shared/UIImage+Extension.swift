@@ -17,6 +17,23 @@ extension UIImage {
   }
   
   convenience init?(puzzle: Puzzle) {
-    self.init(named: puzzle.puzzleType.rawValue)
+    #if os(iOS)
+      self.init(named: "iOS-\(puzzle.puzzleType.rawValue)")
+    #else
+      self.init(named: "tvOS-\(puzzle.puzzleType.rawValue)")
+    #endif
+  }
+  
+  func scale(toSize size: CGSize) -> UIImage {
+    let hasAlpha = false
+    let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+    
+    UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+    self.drawInRect(CGRect(origin: CGPointZero, size: size))
+    
+    let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return scaledImage
   }
 }

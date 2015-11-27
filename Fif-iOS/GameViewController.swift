@@ -82,6 +82,10 @@ extension GameViewController: UICollectionViewDelegate {
     let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle._rows)
     return CGSize(width: width, height: width)
   }
+}
+
+// MARK: - UIContentContainer
+extension GameViewController {
   
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
     view.setNeedsUpdateConstraints()
@@ -92,14 +96,17 @@ extension GameViewController: UICollectionViewDelegate {
 private extension GameViewController {
   
   func updatePosition() {
-    if currentOrientation.isLandscape {
-      view.removeConstraints([leadingConstraint, trailingConstraint])
-      view.addConstraints([bottomConstraint, topConstraint])
-    } else if currentOrientation.isPortrait {
+    guard let windowSize = view.window?.bounds.size else { return }
+    let higher = windowSize.height > windowSize.width
+    
+    if higher {
       view.removeConstraints([bottomConstraint, topConstraint])
       leadingConstraint.constant = 0.0
       trailingConstraint.constant = 0.0
       view.addConstraints([leadingConstraint, trailingConstraint])
+    } else {
+      view.removeConstraints([leadingConstraint, trailingConstraint])
+      view.addConstraints([bottomConstraint, topConstraint])
     }
   }
   

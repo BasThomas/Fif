@@ -12,21 +12,7 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
     
   @IBOutlet weak var puzzlePieceImageView: UIImageView!
   
-  @IBOutlet weak var _numberLabel: UILabel! {
-    didSet {
-      _numberLabel.textColor = .whiteColor()
-    }
-  }
-  
-  var tileNumber: Int = -1 {
-    didSet {
-      guard tileNumber != -1 else {
-        _numberLabel.text = nil
-        return
-      }
-      _numberLabel.text = "\(tileNumber)"
-    }
-  }
+  var tileNumber: Int = -1
   
   override func prepareForReuse() {
     userInteractionEnabled = true
@@ -35,18 +21,16 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   func empty() {
     userInteractionEnabled = false
     puzzlePieceImageView.backgroundColor = .whiteColor()
+    puzzlePieceImageView.image = nil
+    tileNumber = -1
   }
   
   func focus() {
-    let fontSize = self.frame.size.width * 0.8
-    
-    backgroundColor = backgroundColor?.colorWithAlphaComponent(0.5)
-    _numberLabel.font = UIFont.systemFontOfSize(fontSize)
+    puzzlePieceImageView.alpha = 0.5
   }
   
   func unfocus() {
-    backgroundColor = backgroundColor?.colorWithAlphaComponent(1.0)
-    _numberLabel.font = UIFont.systemFontOfSize(50.0)
+    puzzlePieceImageView.alpha = 1.0
   }
 }
 

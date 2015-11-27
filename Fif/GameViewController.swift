@@ -50,7 +50,13 @@ extension GameViewController: UICollectionViewDataSource {
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * game._rows)
-    cell.puzzlePieceImageView.backgroundColor = .randomColor()
+    if let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame {
+      let image = UIImage(named: "puzzle1")?.crop(toRect: CGRect(
+        origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
+        size: CGSize(width: cellFrame.width, height: cellFrame.height)))
+      
+      cell.puzzlePieceImageView.image = image
+    }
     guard cell.tileNumber != pow(game._rows, 2) else { return cell.empty() }
   }
   

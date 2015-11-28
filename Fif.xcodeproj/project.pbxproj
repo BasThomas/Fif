@@ -25,6 +25,7 @@
 		49ADD97C1C024C54008D9B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD97A1C024C54008D9B91 /* Main.storyboard */; };
 		49ADD97E1C024C54008D9B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD97D1C024C54008D9B91 /* Assets.xcassets */; };
 		49ADD9911C025622008D9B91 /* PuzzleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */; };
+		49C6EAA51C09B3E700F142FF /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6EAA41C09B3E700F142FF /* Int+Extension.swift */; };
 		49CF66C51C088D97007A9A8A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66C41C088D97007A9A8A /* GameViewController.swift */; };
 		49CF66D21C089098007A9A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66D11C089098007A9A8A /* AppDelegate.swift */; };
 		49CF66D71C089098007A9A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66D51C089098007A9A8A /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		49ADD97D1C024C54008D9B91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49ADD97F1C024C54008D9B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleCollectionViewCell.swift; sourceTree = "<group>"; };
+		49C6EAA41C09B3E700F142FF /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		49CF66C41C088D97007A9A8A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		49CF66CF1C089098007A9A8A /* Fif-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fif-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CF66D11C089098007A9A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */,
+				49C6EAA41C09B3E700F142FF /* Int+Extension.swift */,
 				4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */,
 				490048311C093A3D00CD08E0 /* NSIndexPath+Extension.swift */,
 				4981BA681C0891EF005D83E4 /* Math.swift */,
@@ -291,6 +294,7 @@
 				4981BA651C0891C3005D83E4 /* Puzzle.swift in Sources */,
 				4981BA671C0891E8005D83E4 /* UIImage+Extension.swift in Sources */,
 				49ADD9911C025622008D9B91 /* PuzzleCollectionViewCell.swift in Sources */,
+				49C6EAA51C09B3E700F142FF /* Int+Extension.swift in Sources */,
 				4981BA7A1C0892A0005D83E4 /* AppDelegate.swift in Sources */,
 				490048321C093A3D00CD08E0 /* NSIndexPath+Extension.swift in Sources */,
 				4981BA691C0891EF005D83E4 /* Math.swift in Sources */,

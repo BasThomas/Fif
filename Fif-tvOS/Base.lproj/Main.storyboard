@@ -54,7 +54,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Jgy-D8-Q2t" firstAttribute="centerX" secondItem="u6a-fc-D89" secondAttribute="centerX" id="6C6-TL-Qt7"/>
                                             <constraint firstItem="Jgy-D8-Q2t" firstAttribute="centerY" secondItem="u6a-fc-D89" secondAttribute="centerY" id="Bc8-fx-Z43"/>
@@ -84,14 +83,25 @@
                                     <action selector="reload:" destination="499-42-d0g" eventType="primaryActionTriggered" id="tXc-gg-AqQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T67-Xb-3KG">
+                                <rect key="frame" x="50" y="186" width="204" height="86"/>
+                                <animations/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Shuffle"/>
+                                <connections>
+                                    <action selector="shuffle:" destination="499-42-d0g" eventType="primaryActionTriggered" id="IfI-L5-vaf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <constraints>
+                            <constraint firstItem="T67-Xb-3KG" firstAttribute="top" secondItem="omV-nu-aJf" secondAttribute="bottom" constant="50" id="2hy-tC-GdA"/>
                             <constraint firstItem="yaX-A2-MfE" firstAttribute="top" secondItem="TiC-Vw-u93" secondAttribute="bottom" id="3ov-wn-Vze"/>
                             <constraint firstItem="omV-nu-aJf" firstAttribute="leading" secondItem="weF-Pa-zaM" secondAttribute="leading" constant="50" id="GRt-CH-fhh"/>
                             <constraint firstItem="omV-nu-aJf" firstAttribute="top" secondItem="TiC-Vw-u93" secondAttribute="bottom" constant="50" id="Kkf-Nh-vED"/>
                             <constraint firstItem="yaX-A2-MfE" firstAttribute="centerX" secondItem="weF-Pa-zaM" secondAttribute="centerX" id="W8W-nE-DUr"/>
                             <constraint firstItem="3TX-uQ-fmp" firstAttribute="top" secondItem="yaX-A2-MfE" secondAttribute="bottom" id="oy0-AI-p3U"/>
+                            <constraint firstItem="T67-Xb-3KG" firstAttribute="leading" secondItem="weF-Pa-zaM" secondAttribute="leading" constant="50" id="qa6-Qt-QtA"/>
                             <constraint firstItem="yaX-A2-MfE" firstAttribute="centerY" secondItem="weF-Pa-zaM" secondAttribute="centerY" id="x5p-zW-i49"/>
                         </constraints>
                     </view>

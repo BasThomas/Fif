@@ -30,6 +30,21 @@ extension GameViewController {
   @IBAction func reload(sender: AnyObject) {
     puzzleCollectionView.reloadData()
   }
+  
+  @IBAction func shuffle(sender: AnyObject) {
+    guard var emptyIndexPath = emptyIndexPath else { return }
+    
+    for _ in 1...pow(puzzle._rows, 2) {
+      let indexPaths = puzzleCollectionView.adjacentIndexPaths(forIndexPath: emptyIndexPath)
+      let randomTilenumber = Int.random(inRange: 0...indexPaths.count - 1)
+      let randomIndexPath = indexPaths[randomTilenumber]
+      
+      guard puzzleCollectionView.swap(indexPath: randomIndexPath, withIndexPath: emptyIndexPath, completionHandler: nil) else { continue }
+      emptyIndexPath = randomIndexPath
+    }
+    
+    self.emptyIndexPath = emptyIndexPath
+  }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -63,14 +78,10 @@ extension GameViewController: UICollectionViewDataSource {
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     guard let emptyIndexPath = emptyIndexPath else { return }
     // Check if the cell can be moved; or if it touches the emptyIndexPath.
-    guard indexPath.adjacent(toIndexPath: emptyIndexPath, inCollectionView: collectionView) else { return }
-    
-    collectionView.performBatchUpdates( {
-      collectionView.moveItemAtIndexPath(indexPath, toIndexPath: emptyIndexPath)
-      collectionView.moveItemAtIndexPath(emptyIndexPath, toIndexPath: indexPath)
-    }, completion: { success in
+    collectionView.swap(indexPath: indexPath, withIndexPath: emptyIndexPath) { swapped in
+      guard swapped else { return }
       self.emptyIndexPath = indexPath
-    })
+    }
   }
 }
 

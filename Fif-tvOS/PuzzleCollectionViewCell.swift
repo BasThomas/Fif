@@ -33,7 +33,6 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   
   func empty() {
     userInteractionEnabled = false
-    puzzlePieceImageView.backgroundColor = .whiteColor()
     puzzlePieceImageView.image = nil
     tileNumber = -1
   }

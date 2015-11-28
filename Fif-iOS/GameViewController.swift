@@ -51,11 +51,11 @@ extension GameViewController {
 extension GameViewController: UICollectionViewDataSource {
   
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-    return puzzle._rows
+    return puzzle.rows
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return puzzle._rows
+    return puzzle.rows
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -64,8 +64,8 @@ extension GameViewController: UICollectionViewDataSource {
   
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
-    cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle._rows)
-    guard cell.tileNumber != pow(puzzle._rows, 2) else { return cell.empty() }
+    cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
+    guard cell.tileNumber != pow(puzzle.rows, 2) else { return cell.empty() }
     guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
     let image = UIImage(puzzle: puzzle)?.scale(toSize: cellFrame.size).crop(toRect: CGRect(
       origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
@@ -85,7 +85,7 @@ extension GameViewController: UICollectionViewDataSource {
 extension GameViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle._rows)
+    let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle.rows)
     return CGSize(width: width, height: width)
   }
 }

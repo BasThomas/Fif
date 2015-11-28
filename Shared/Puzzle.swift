@@ -11,12 +11,12 @@ import Foundation
 struct Puzzle {
   var puzzleType: PuzzleType
   var difficulty: Difficulty
-  private (set) var _rows: Int
+  private (set) var rows: Int
   
   init(type puzzleType: PuzzleType, difficulty: Difficulty) {
     self.puzzleType = puzzleType
     self.difficulty = difficulty
-    self._rows = difficulty.rawValue
+    self.rows = difficulty.rawValue
   }
 }
 

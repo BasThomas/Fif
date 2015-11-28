@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    puzzle = Puzzle(type: .Escher, difficulty: .Normal)
+    puzzle = Puzzle(type: .Escher, difficulty: .Easy)
     solvedImageView.image = UIImage(puzzle: puzzle)
   }
   
@@ -30,31 +30,10 @@ class GameViewController: UIViewController {
 // MARK: - Actions
 extension GameViewController {
   
-  @IBAction func hint(sender: AnyObject) {
-    guard let button = sender as? UIButton else { return }
-    guard let buttonText = button.titleLabel?.text else { return }
-    
-    if buttonText == "Show hint" {
-      UIView.animateWithDuration(1.0, animations: {
-        self.solvedImageView.alpha = 1.0
-        self.puzzleCollectionView.alpha = 0.0
-      }, completion: { _ in
-        button.setTitle("Hide hint", forState: .Normal)
-      })
-    } else if buttonText == "Hide hint" {
-      UIView.animateWithDuration(1.0, animations: {
-        self.solvedImageView.alpha = 0.0
-        self.puzzleCollectionView.alpha = 1.0
-      }, completion: { _ in
-        button.setTitle("Show hint", forState: .Normal)
-      })
-    }
-  }
-  
   @IBAction func shuffle(sender: AnyObject) {
     guard var emptyIndexPath = emptyIndexPath else { return }
     
-    for _ in 1...pow(puzzle._rows, 2) {
+    for _ in 1...50 {
       let indexPaths = puzzleCollectionView.adjacentIndexPaths(forIndexPath: emptyIndexPath)
       let randomTilenumber = Int.random(inRange: 0...indexPaths.count - 1)
       let randomIndexPath = indexPaths[randomTilenumber]
@@ -71,11 +50,11 @@ extension GameViewController {
 extension GameViewController: UICollectionViewDataSource {
   
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-    return puzzle._rows
+    return puzzle.rows
   }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return puzzle._rows
+    return puzzle.rows
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -84,8 +63,8 @@ extension GameViewController: UICollectionViewDataSource {
   
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
-    cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle._rows)
-    guard cell.tileNumber != pow(puzzle._rows, 2) else { emptyIndexPath = indexPath; return cell.empty() }
+    cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
+    guard cell.tileNumber != pow(puzzle.rows, 2) else { emptyIndexPath = indexPath; return cell.empty() }
     guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
     
     let image = UIImage(puzzle: puzzle)?.crop(toRect: CGRect(
@@ -109,7 +88,7 @@ extension GameViewController: UICollectionViewDataSource {
 extension GameViewController: UICollectionViewDelegate {
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle._rows)
+    let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle.rows)
     return CGSize(width: width, height: width)
   }
 }

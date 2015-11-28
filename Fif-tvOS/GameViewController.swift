@@ -11,12 +11,15 @@ import UIKit
 class GameViewController: UIViewController {
   
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
+  @IBOutlet weak var solvedImageView: UIImageView!
+  
   var puzzle: Puzzle!
   var emptyIndexPath: NSIndexPath?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     puzzle = Puzzle(type: .Escher, difficulty: .Normal)
+    solvedImageView.image = UIImage(puzzle: puzzle)
   }
   
   override func didReceiveMemoryWarning() {
@@ -27,8 +30,25 @@ class GameViewController: UIViewController {
 // MARK: - Actions
 extension GameViewController {
   
-  @IBAction func reload(sender: AnyObject) {
-    puzzleCollectionView.reloadData()
+  @IBAction func hint(sender: AnyObject) {
+    guard let button = sender as? UIButton else { return }
+    guard let buttonText = button.titleLabel?.text else { return }
+    
+    if buttonText == "Show hint" {
+      UIView.animateWithDuration(1.0, animations: {
+        self.solvedImageView.alpha = 1.0
+        self.puzzleCollectionView.alpha = 0.0
+      }, completion: { _ in
+        button.setTitle("Hide hint", forState: .Normal)
+      })
+    } else if buttonText == "Hide hint" {
+      UIView.animateWithDuration(1.0, animations: {
+        self.solvedImageView.alpha = 0.0
+        self.puzzleCollectionView.alpha = 1.0
+      }, completion: { _ in
+        button.setTitle("Show hint", forState: .Normal)
+      })
+    }
   }
   
   @IBAction func shuffle(sender: AnyObject) {
@@ -91,5 +111,38 @@ extension GameViewController: UICollectionViewDelegate {
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
     let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle._rows)
     return CGSize(width: width, height: width)
+  }
+}
+
+// MARK: - TouchButtonDelegate + Hintable
+extension GameViewController: TouchButtonDelegate, Hintable {
+  
+  func pressBegan(sender: AnyObject) {
+    showHint(sender)
+  }
+  
+  func pressEnded(sender: AnyObject) {
+    hideHint(sender)
+  }
+  
+  func pressCancelled(sender: AnyObject) {
+    hideHint(sender)
+  }
+  
+  // MARK: Actions
+  func showHint(sender: AnyObject) {
+    UIView.animateWithDuration(0.7) {
+      self.solvedImageView.alpha = 1.0
+      self.puzzleCollectionView.alpha = 0.0
+    }
+  }
+  
+  func hideHint(sender: AnyObject) {
+    guard let button = sender as? TouchButton else { return }
+    button.highlighted = false
+    UIView.animateWithDuration(0.7) {
+      self.solvedImageView.alpha = 0.0
+      self.puzzleCollectionView.alpha = 1.0
+    }
   }
 }

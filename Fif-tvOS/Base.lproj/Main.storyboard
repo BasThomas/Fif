@@ -5,7 +5,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Delegate-->
         <scene sceneID="dEh-eV-dlg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFW-Nd-Df7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,17 +74,20 @@
                                     <outlet property="delegate" destination="499-42-d0g" id="org-wv-ohg"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omV-nu-aJf">
-                                <rect key="frame" x="50" y="50" width="205" height="86"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omV-nu-aJf" customClass="TouchButton" customModule="Fif_tvOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="50" width="300" height="86"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="pmz-yz-5c5"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Restart"/>
+                                <state key="normal" title="Show hint"/>
                                 <connections>
-                                    <action selector="reload:" destination="499-42-d0g" eventType="primaryActionTriggered" id="tXc-gg-AqQ"/>
+                                    <outlet property="delegate" destination="499-42-d0g" id="rO1-48-zH7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T67-Xb-3KG">
-                                <rect key="frame" x="50" y="186" width="204" height="86"/>
+                                <rect key="frame" x="50" y="186" width="300" height="86"/>
                                 <animations/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Shuffle"/>
@@ -92,21 +95,35 @@
                                     <action selector="shuffle:" destination="499-42-d0g" eventType="primaryActionTriggered" id="IfI-L5-vaf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-Ax-7sV">
+                                <rect key="frame" x="420" y="0.0" width="1080" height="1080"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wPh-Ax-7sV" secondAttribute="height" multiplier="1:1" id="DRZ-MH-8Lg"/>
+                                    <constraint firstAttribute="width" constant="1080" id="EvF-zq-tAu"/>
+                                    <constraint firstAttribute="height" constant="1080" id="jXj-kZ-C7f"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wPh-Ax-7sV" secondAttribute="bottom" id="00C-6Y-CD8"/>
+                            <constraint firstItem="wPh-Ax-7sV" firstAttribute="top" secondItem="weF-Pa-zaM" secondAttribute="top" id="0ca-3I-TkQ"/>
                             <constraint firstItem="T67-Xb-3KG" firstAttribute="top" secondItem="omV-nu-aJf" secondAttribute="bottom" constant="50" id="2hy-tC-GdA"/>
+                            <constraint firstItem="omV-nu-aJf" firstAttribute="width" secondItem="T67-Xb-3KG" secondAttribute="width" id="3YC-xI-fLs"/>
                             <constraint firstItem="yaX-A2-MfE" firstAttribute="top" secondItem="TiC-Vw-u93" secondAttribute="bottom" id="3ov-wn-Vze"/>
                             <constraint firstItem="omV-nu-aJf" firstAttribute="leading" secondItem="weF-Pa-zaM" secondAttribute="leading" constant="50" id="GRt-CH-fhh"/>
                             <constraint firstItem="omV-nu-aJf" firstAttribute="top" secondItem="TiC-Vw-u93" secondAttribute="bottom" constant="50" id="Kkf-Nh-vED"/>
                             <constraint firstItem="yaX-A2-MfE" firstAttribute="centerX" secondItem="weF-Pa-zaM" secondAttribute="centerX" id="W8W-nE-DUr"/>
                             <constraint firstItem="3TX-uQ-fmp" firstAttribute="top" secondItem="yaX-A2-MfE" secondAttribute="bottom" id="oy0-AI-p3U"/>
                             <constraint firstItem="T67-Xb-3KG" firstAttribute="leading" secondItem="weF-Pa-zaM" secondAttribute="leading" constant="50" id="qa6-Qt-QtA"/>
+                            <constraint firstItem="wPh-Ax-7sV" firstAttribute="centerX" secondItem="weF-Pa-zaM" secondAttribute="centerX" id="vkg-wd-ILI"/>
                             <constraint firstItem="yaX-A2-MfE" firstAttribute="centerY" secondItem="weF-Pa-zaM" secondAttribute="centerY" id="x5p-zW-i49"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="puzzleCollectionView" destination="yaX-A2-MfE" id="t5t-X2-o21"/>
+                        <outlet property="solvedImageView" destination="wPh-Ax-7sV" id="zsC-sG-lLh"/>
                     </connections>
                 </viewController>
             </objects>

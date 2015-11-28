@@ -11,7 +11,7 @@ import UIKit
 private let debug = true
 
 class PuzzleCollectionViewCell: UICollectionViewCell {
-    
+  
   @IBOutlet weak var puzzlePieceImageView: UIImageView!
   @IBOutlet weak var tileNumberLabel: UILabel!
   

@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		490048301C09358900CD08E0 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */; };
 		490048321C093A3D00CD08E0 /* NSIndexPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490048311C093A3D00CD08E0 /* NSIndexPath+Extension.swift */; };
+		491CCD631C0A4E130026192D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491CCD621C0A4E130026192D /* String+Extension.swift */; };
+		491CCD641C0A4E420026192D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491CCD621C0A4E130026192D /* String+Extension.swift */; };
+		491CCD651C0A4E430026192D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491CCD621C0A4E130026192D /* String+Extension.swift */; };
+		493CAB7A1C0A270000D8F9A1 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA641C0891C3005D83E4 /* Puzzle.swift */; };
+		493CAB7B1C0A293B00D8F9A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA6A1C0891FB005D83E4 /* Constants.swift */; };
 		496E16101C09E241001CB058 /* Hintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E160F1C09E241001CB058 /* Hintable.swift */; };
 		496E16111C09E24A001CB058 /* Hintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E160F1C09E241001CB058 /* Hintable.swift */; };
 		496E16371C0A23CE001CB058 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496E16361C0A23CE001CB058 /* TVServices.framework */; };
 		496E163A1C0A23CE001CB058 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E16391C0A23CE001CB058 /* ServiceProvider.swift */; };
 		496E163E1C0A23CE001CB058 /* TopShelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 496E16341C0A23CE001CB058 /* TopShelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		496E16441C0A2541001CB058 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 496E16431C0A2541001CB058 /* Info.plist */; };
 		4981BA651C0891C3005D83E4 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA641C0891C3005D83E4 /* Puzzle.swift */; };
 		4981BA671C0891E8005D83E4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */; };
 		4981BA691C0891EF005D83E4 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA681C0891EF005D83E4 /* Math.swift */; };
@@ -70,11 +76,12 @@
 /* Begin PBXFileReference section */
 		4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Extension.swift"; path = "Shared/UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		490048311C093A3D00CD08E0 /* NSIndexPath+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSIndexPath+Extension.swift"; path = "Shared/NSIndexPath+Extension.swift"; sourceTree = "<group>"; };
-		496E160F1C09E241001CB058 /* Hintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hintable.swift; sourceTree = "<group>"; };
+		491CCD621C0A4E130026192D /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		496E160F1C09E241001CB058 /* Hintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hintable.swift; path = Shared/Hintable.swift; sourceTree = "<group>"; };
 		496E16341C0A23CE001CB058 /* TopShelf.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TopShelf.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		496E16361C0A23CE001CB058 /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
 		496E16391C0A23CE001CB058 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
-		496E163B1C0A23CE001CB058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496E16431C0A2541001CB058 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4981BA641C0891C3005D83E4 /* Puzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Puzzle.swift; path = Shared/Puzzle.swift; sourceTree = "<group>"; };
 		4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "Shared/UIImage+Extension.swift"; sourceTree = "<group>"; };
 		4981BA681C0891EF005D83E4 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Math.swift; path = Shared/Math.swift; sourceTree = "<group>"; };
@@ -142,13 +149,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		496E16381C0A23CE001CB058 /* Fif-tvOS Top Shelf */ = {
+		496E16381C0A23CE001CB058 /* Fif-tvOS-Top-Shelf */ = {
 			isa = PBXGroup;
 			children = (
 				496E16391C0A23CE001CB058 /* ServiceProvider.swift */,
-				496E163B1C0A23CE001CB058 /* Info.plist */,
+				496E16431C0A2541001CB058 /* Info.plist */,
 			);
-			path = "Fif-tvOS Top Shelf";
+			path = "Fif-tvOS-Top-Shelf";
 			sourceTree = "<group>";
 		};
 		49ADD9641C024C53008D9B91 = {
@@ -205,7 +212,7 @@
 			children = (
 				49CF66C71C08900C007A9A8A /* Shared */,
 				49ADD96F1C024C53008D9B91 /* Fif-tvOS */,
-				496E16381C0A23CE001CB058 /* Fif-tvOS Top Shelf */,
+				496E16381C0A23CE001CB058 /* Fif-tvOS-Top-Shelf */,
 				49CF66D01C089098007A9A8A /* Fif-iOS */,
 			);
 			name = Fif;
@@ -239,6 +246,7 @@
 				4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */,
 				490048311C093A3D00CD08E0 /* NSIndexPath+Extension.swift */,
 				4981BA681C0891EF005D83E4 /* Math.swift */,
+				491CCD621C0A4E130026192D /* String+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496E16441C0A2541001CB058 /* Info.plist in Resources */,
 				49ADD97C1C024C54008D9B91 /* Main.storyboard in Resources */,
 				49ADD97E1C024C54008D9B91 /* Assets.xcassets in Resources */,
 				4981BA721C08923A005D83E4 /* Assets.xcassets in Resources */,
@@ -407,7 +416,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491CCD641C0A4E420026192D /* String+Extension.swift in Sources */,
 				496E163A1C0A23CE001CB058 /* ServiceProvider.swift in Sources */,
+				493CAB7A1C0A270000D8F9A1 /* Puzzle.swift in Sources */,
+				493CAB7B1C0A293B00D8F9A1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +435,7 @@
 				49C6EAA51C09B3E700F142FF /* Int+Extension.swift in Sources */,
 				4981BA7A1C0892A0005D83E4 /* AppDelegate.swift in Sources */,
 				490048321C093A3D00CD08E0 /* NSIndexPath+Extension.swift in Sources */,
+				491CCD631C0A4E130026192D /* String+Extension.swift in Sources */,
 				4981BA691C0891EF005D83E4 /* Math.swift in Sources */,
 				4981BA6B1C0891FB005D83E4 /* Constants.swift in Sources */,
 				496E16101C09E241001CB058 /* Hintable.swift in Sources */,
@@ -439,6 +452,7 @@
 				49CF66D21C089098007A9A8A /* AppDelegate.swift in Sources */,
 				4981BA6C1C0891FB005D83E4 /* Constants.swift in Sources */,
 				496E16111C09E24A001CB058 /* Hintable.swift in Sources */,
+				491CCD651C0A4E430026192D /* String+Extension.swift in Sources */,
 				4981BA6D1C089202005D83E4 /* Math.swift in Sources */,
 				49C6EAE81C09DDE800F142FF /* Int+Extension.swift in Sources */,
 				4981BA7D1C0893FA005D83E4 /* GameViewController.swift in Sources */,
@@ -491,7 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = TopShelf/Info.plist;
+				INFOPLIST_FILE = "Fif-tvOS-Top-Shelf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS.TopShelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -502,7 +516,7 @@
 		496E16401C0A23CE001CB058 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = TopShelf/Info.plist;
+				INFOPLIST_FILE = "Fif-tvOS-Top-Shelf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS.TopShelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -658,6 +672,7 @@
 				496E16401C0A23CE001CB058 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49ADD9681C024C53008D9B91 /* Build configuration list for PBXProject "Fif" */ = {
 			isa = XCConfigurationList;

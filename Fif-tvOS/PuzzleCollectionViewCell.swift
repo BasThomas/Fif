@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let debug = true
+private let debug = false
 
 class PuzzleCollectionViewCell: UICollectionViewCell {
   

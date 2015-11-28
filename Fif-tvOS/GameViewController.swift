@@ -13,17 +13,31 @@ class GameViewController: UIViewController {
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
   @IBOutlet weak var solvedImageView: UIImageView!
   
-  var puzzle: Puzzle!
+  var puzzle: Puzzle! {
+    didSet {
+      solvedImageView.image = UIImage(puzzle: puzzle)
+      puzzleCollectionView.reloadData()
+    }
+  }
+  
   var emptyIndexPath: NSIndexPath?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     puzzle = Puzzle(type: .Escher, difficulty: .Easy)
-    solvedImageView.image = UIImage(puzzle: puzzle)
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+}
+
+// MARK: - Deep linking
+extension GameViewController {
+  
+  func deepLink(puzzleName: String) {
+    guard let puzzleType = PuzzleType(rawValue: puzzleName) else { return }
+    puzzle = Puzzle(type: puzzleType, difficulty: .Easy)
   }
 }
 

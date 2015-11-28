@@ -14,7 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
+    return true
+  }
+  
+  func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+    guard let _ = url.host else { return true }
+    
+    let urlString = url.absoluteString
+    let urlArray = urlString.componentsSeparatedByString("/")
+    guard urlArray.count >= 4 else { return true }
+    let urlTypeIndex = 2
+    let urlType = urlArray[urlTypeIndex]
+    
+    guard let _ = urlType.rangeOfString("puzzle") else { return true }
+    let puzzleNameIndex = 3
+    let puzzleName = urlArray[puzzleNameIndex]
+    guard let gameViewController = self.window?.rootViewController as? GameViewController where !puzzleName.isEmpty else { return true }
+    gameViewController.deepLink(puzzleName)
+    
     return true
   }
   

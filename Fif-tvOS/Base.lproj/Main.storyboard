@@ -43,6 +43,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                     <animations/>
                                                 </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-D8-Q2t">
+                                                    <rect key="frame" x="118" y="71" width="64" height="158"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="132"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -50,6 +57,8 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="Jgy-D8-Q2t" firstAttribute="centerX" secondItem="u6a-fc-D89" secondAttribute="centerX" id="6C6-TL-Qt7"/>
+                                            <constraint firstItem="Jgy-D8-Q2t" firstAttribute="centerY" secondItem="u6a-fc-D89" secondAttribute="centerY" id="Bc8-fx-Z43"/>
                                             <constraint firstItem="QQq-TT-q1G" firstAttribute="leading" secondItem="u6a-fc-D89" secondAttribute="leading" id="eBh-vc-roX"/>
                                             <constraint firstAttribute="bottom" secondItem="QQq-TT-q1G" secondAttribute="bottom" id="fUl-kp-NIc"/>
                                             <constraint firstItem="QQq-TT-q1G" firstAttribute="top" secondItem="u6a-fc-D89" secondAttribute="top" id="jCf-ry-fQn"/>
@@ -58,6 +67,7 @@
                                         <size key="customSize" width="300" height="300"/>
                                         <connections>
                                             <outlet property="puzzlePieceImageView" destination="QQq-TT-q1G" id="uhZ-OW-a0C"/>
+                                            <outlet property="tileNumberLabel" destination="Jgy-D8-Q2t" id="vTd-ca-sCu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

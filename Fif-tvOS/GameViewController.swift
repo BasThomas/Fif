@@ -12,10 +12,11 @@ class GameViewController: UIViewController {
   
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
   var puzzle: Puzzle!
+  var emptyIndexPath: NSIndexPath?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    puzzle = Puzzle(type: .MountainRange, difficulty: .Normal)
+    puzzle = Puzzle(type: .Escher, difficulty: .Normal)
   }
   
   override func didReceiveMemoryWarning() {
@@ -48,8 +49,8 @@ extension GameViewController: UICollectionViewDataSource {
   
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
-    guard cell.tileNumber != pow(puzzle._rows, 2) else { return cell.empty() }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle._rows)
+    guard cell.tileNumber != pow(puzzle._rows, 2) else { emptyIndexPath = indexPath; return cell.empty() }
     guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
     
     let image = UIImage(puzzle: puzzle)?.crop(toRect: CGRect(
@@ -60,8 +61,16 @@ extension GameViewController: UICollectionViewDataSource {
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? PuzzleCollectionViewCell else { return }
-    print(cell.tileNumber)
+    guard let emptyIndexPath = emptyIndexPath else { return }
+    // Check if the cell can be moved; or if it touches the emptyIndexPath.
+    guard indexPath.touches(emptyIndexPath, inCollectionView: collectionView) else { return }
+    
+    collectionView.performBatchUpdates( {
+      collectionView.moveItemAtIndexPath(indexPath, toIndexPath: emptyIndexPath)
+      collectionView.moveItemAtIndexPath(emptyIndexPath, toIndexPath: indexPath)
+    }, completion: { success in
+      self.emptyIndexPath = indexPath
+    })
   }
 }
 

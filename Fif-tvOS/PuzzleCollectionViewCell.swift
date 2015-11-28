@@ -8,11 +8,23 @@
 
 import UIKit
 
+private let debug = true
+
 class PuzzleCollectionViewCell: UICollectionViewCell {
     
   @IBOutlet weak var puzzlePieceImageView: UIImageView!
+  @IBOutlet weak var tileNumberLabel: UILabel!
   
-  var tileNumber: Int = -1
+  var tileNumber: Int = -1 {
+    didSet {
+      guard tileNumber != -1 else { tileNumberLabel.text = nil; return }
+      tileNumberLabel.text = "\(tileNumber)"
+    }
+  }
+  
+  override func awakeFromNib() {
+    if debug { tileNumberLabel.hidden = false }
+  }
   
   override func prepareForReuse() {
     super.prepareForReuse()

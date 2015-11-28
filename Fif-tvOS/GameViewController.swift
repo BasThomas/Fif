@@ -63,7 +63,7 @@ extension GameViewController: UICollectionViewDataSource {
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     guard let emptyIndexPath = emptyIndexPath else { return }
     // Check if the cell can be moved; or if it touches the emptyIndexPath.
-    guard indexPath.touches(emptyIndexPath, inCollectionView: collectionView) else { return }
+    guard indexPath.adjacent(toIndexPath: emptyIndexPath, inCollectionView: collectionView) else { return }
     
     collectionView.performBatchUpdates( {
       collectionView.moveItemAtIndexPath(indexPath, toIndexPath: emptyIndexPath)

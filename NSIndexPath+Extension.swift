@@ -10,7 +10,7 @@ import UIKit
 
 extension NSIndexPath {
   
-  func touches(indexPath: NSIndexPath, inCollectionView collectionView: UICollectionView) -> Bool {
+  func adjacent(toIndexPath indexPath: NSIndexPath, inCollectionView collectionView: UICollectionView) -> Bool {
     return !collectionView.touchingIndexPaths(forIndexPath: self).filter { $0 == indexPath }.isEmpty
   }
 }

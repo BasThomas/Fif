@@ -11,6 +11,6 @@ import UIKit
 extension NSIndexPath {
   
   func adjacent(toIndexPath indexPath: NSIndexPath, inCollectionView collectionView: UICollectionView) -> Bool {
-    return !collectionView.touchingIndexPaths(forIndexPath: self).filter { $0 == indexPath }.isEmpty
+    return !collectionView.adjacentIndexPaths(forIndexPath: self).filter { $0 == indexPath }.isEmpty
   }
 }

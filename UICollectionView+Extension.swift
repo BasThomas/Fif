@@ -10,7 +10,7 @@ import UIKit
 
 extension UICollectionView {
   
-  func touchingIndexPaths(forIndexPath indexPath: NSIndexPath) -> [NSIndexPath] {
+  func adjacentIndexPaths(forIndexPath indexPath: NSIndexPath) -> [NSIndexPath] {
     let indexPaths = visibleCells().flatMap { indexPathForCell($0) }
     var touchingIndexPaths: [NSIndexPath] = []
     

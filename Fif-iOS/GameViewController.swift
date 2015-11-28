@@ -15,12 +15,18 @@ class GameViewController: UIViewController {
   @IBOutlet var topConstraint: NSLayoutConstraint!
   @IBOutlet var bottomConstraint: NSLayoutConstraint!
   
+  @IBOutlet var centerXConstraint: NSLayoutConstraint!
+  @IBOutlet var centerYConstraint: NSLayoutConstraint!
+  
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
   var puzzle: Puzzle!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     puzzle = Puzzle(type: .MountainRange, difficulty: .Easy)
+    
+    // Dirty auto-layout fix, for now.
+    view.removeConstraint(bottomConstraint)
   }
   
   override func updateViewConstraints() {
@@ -100,13 +106,13 @@ private extension GameViewController {
     let higher = windowSize.height > windowSize.width
     
     if higher {
-      view.removeConstraints([bottomConstraint, topConstraint])
+      view.removeConstraints([bottomConstraint, topConstraint, centerXConstraint])
       leadingConstraint.constant = 0.0
       trailingConstraint.constant = 0.0
-      view.addConstraints([leadingConstraint, trailingConstraint])
+      view.addConstraints([leadingConstraint, trailingConstraint, centerYConstraint])
     } else {
-      view.removeConstraints([leadingConstraint, trailingConstraint])
-      view.addConstraints([bottomConstraint, topConstraint])
+      view.removeConstraints([leadingConstraint, trailingConstraint, centerYConstraint])
+      view.addConstraints([bottomConstraint, topConstraint, centerXConstraint])
     }
   }
   

@@ -9,7 +9,7 @@
         <!--Fif-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Fif_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="GameViewController" customModule="Fif_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-x8-OXh">
-                                <rect key="frame" x="200" y="0.0" width="600" height="600"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-x8-OXh">
+                                <rect key="frame" x="232" y="64" width="536" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="5ah-x8-OXh" secondAttribute="height" multiplier="1:1" id="9CC-PB-K4H"/>
+                                    <constraint firstAttribute="width" secondItem="5ah-x8-OXh" secondAttribute="height" multiplier="1:1" id="gWR-2a-bfb"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ghU-Ya-Vud">
                                     <size key="itemSize" width="300" height="300"/>
@@ -33,7 +33,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="puzzlePiece" id="I9Z-9r-Rk1" customClass="PuzzleCollectionViewCell" customModule="Fif_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="300" height="300"/>
+                                        <rect key="frame" x="118" y="0.0" width="300" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -69,12 +69,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5ah-x8-OXh" secondAttribute="bottom" id="GDx-G2-rTK"/>
-                            <constraint firstItem="5ah-x8-OXh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="200" id="Ike-SU-LPQ"/>
-                            <constraint firstItem="5ah-x8-OXh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kv4-vK-phk"/>
-                            <constraint firstItem="5ah-x8-OXh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PBJ-vz-wE1"/>
-                            <constraint firstItem="5ah-x8-OXh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="a6W-FT-Juk"/>
-                            <constraint firstAttribute="trailing" secondItem="5ah-x8-OXh" secondAttribute="trailing" constant="200" id="whj-N3-7iy"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2SG-Gr-jk6"/>
+                            <constraint firstAttribute="trailing" secondItem="5ah-x8-OXh" secondAttribute="trailing" constant="232" id="38b-EW-Gpa"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" identifier="jklfdsaklkjlsadf" id="6UP-OH-dlT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5ah-x8-OXh" secondAttribute="bottom" id="GhZ-H9-LrA"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OAz-ON-Gzd"/>
+                            <constraint firstItem="5ah-x8-OXh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="232" id="UMW-gt-zfG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fif" id="szs-rP-BrI">
@@ -87,11 +87,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1000" height="600"/>
                     <connections>
-                        <outlet property="bottomConstraint" destination="GDx-G2-rTK" id="OLD-uc-Zyb"/>
-                        <outlet property="leadingConstraint" destination="Ike-SU-LPQ" id="XZV-Hr-5Xz"/>
+                        <outlet property="bottomConstraint" destination="GhZ-H9-LrA" id="s86-Tn-XQr"/>
+                        <outlet property="centerXConstraint" destination="2SG-Gr-jk6" id="uqB-CP-YMq"/>
+                        <outlet property="centerYConstraint" destination="OAz-ON-Gzd" id="tb9-kj-uhC"/>
+                        <outlet property="leadingConstraint" destination="UMW-gt-zfG" id="reM-gV-Gq2"/>
                         <outlet property="puzzleCollectionView" destination="5ah-x8-OXh" id="2v5-zW-ynh"/>
-                        <outlet property="topConstraint" destination="PBJ-vz-wE1" id="gq2-nx-Xvv"/>
-                        <outlet property="trailingConstraint" destination="whj-N3-7iy" id="GEt-lz-7ch"/>
+                        <outlet property="topConstraint" destination="6UP-OH-dlT" id="Kf3-ba-Xjg"/>
+                        <outlet property="trailingConstraint" destination="38b-EW-Gpa" id="Fda-Sh-AjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

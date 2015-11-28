@@ -8,3 +8,4 @@ Puzzle game showcasing Apple TV, based on [15-puzzle](https://en.wikipedia.org/w
 ![Fif example 2](images/fif_example2.png)
 ### November 28th 2015
 ![Fif example 3](images/fif_example3.gif)
+![Fif example 4](images/fif_example4.gif)

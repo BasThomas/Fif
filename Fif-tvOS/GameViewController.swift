@@ -35,9 +35,10 @@ class GameViewController: UIViewController {
 // MARK: - Deep linking
 extension GameViewController {
   
-  func deepLink(puzzleName: String) {
-    guard let puzzleType = PuzzleType(rawValue: puzzleName) else { return }
-    puzzle = Puzzle(type: puzzleType, difficulty: .Easy)
+  func deepLink(withPuzzleName puzzleName: String, difficulty: Int) {
+    let puzzleType = PuzzleType(rawValue: puzzleName) ?? .Escher
+    let difficulty = Difficulty(rawValue: difficulty) ?? .Normal
+    puzzle = Puzzle(type: puzzleType, difficulty: difficulty)
   }
 }
 

@@ -31,8 +31,8 @@ extension ServiceProvider: TVTopShelfProvider {
     
     let featuredPuzzles = [
       Puzzle(type: .MountainRange, difficulty: .Easy),
-      Puzzle(type: .Escher, difficulty: .Easy),
-      Puzzle(type: .ElCapitan, difficulty: .Easy)
+      Puzzle(type: .Escher, difficulty: .Normal),
+      Puzzle(type: .ElCapitan, difficulty: .Hard)
     ]
     
     for (index, puzzle) in featuredPuzzles.enumerate() {
@@ -44,9 +44,9 @@ extension ServiceProvider: TVTopShelfProvider {
       
       contentItem.imageURL = imageURL
       contentItem.imageShape = .Square
-      contentItem.title = puzzleName.splittedStringAtCapital
+      contentItem.title = "[\(puzzle.difficulty)] \(puzzleName.splittedStringAtCapital)"
       
-      let contentURL = NSURL(string: "\(Constant.Application.baseURL)puzzle/\(puzzleName)")
+      let contentURL = NSURL(string: "\(Constant.Application.baseURL)puzzle/\(puzzleName)/\(puzzle.difficulty.rawValue)")
       contentItem.displayURL = contentURL
       contentItem.playURL = contentURL
       

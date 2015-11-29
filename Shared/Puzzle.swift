@@ -31,3 +31,18 @@ enum Difficulty: Int {
   case Normal = 4
   case Hard = 5
 }
+
+// MARK: - CustomStringConvertible
+extension Difficulty: CustomStringConvertible {
+  
+  var description: String {
+    switch self {
+    case .Easy:
+      return "Easy"
+    case .Normal:
+      return "Normal"
+    case .Hard:
+      return "Hard"
+    }
+  }
+}

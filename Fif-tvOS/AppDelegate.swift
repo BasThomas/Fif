@@ -22,15 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let urlString = url.absoluteString
     let urlArray = urlString.componentsSeparatedByString("/")
-    guard urlArray.count >= 4 else { return true }
+    guard urlArray.count >= 5 else { return true }
     let urlTypeIndex = 2
     let urlType = urlArray[urlTypeIndex]
     
     guard let _ = urlType.rangeOfString("puzzle") else { return true }
     let puzzleNameIndex = 3
     let puzzleName = urlArray[puzzleNameIndex]
-    guard let gameViewController = self.window?.rootViewController as? GameViewController where !puzzleName.isEmpty else { return true }
-    gameViewController.deepLink(puzzleName)
+    let puzzleDifficultyIndex = 4
+    let puzzleDifficulty = urlArray[puzzleDifficultyIndex]
+    guard let
+      difficulty = Int(puzzleDifficulty),
+      gameViewController = self.window?.rootViewController as? GameViewController where !puzzleName.isEmpty else { return true }
+    gameViewController.deepLink(withPuzzleName: puzzleName, difficulty: difficulty)
     
     return true
   }

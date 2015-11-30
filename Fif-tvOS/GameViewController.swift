@@ -10,6 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
   
+  @IBOutlet weak var hintButton: UIButton!
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
   @IBOutlet weak var solvedImageView: UIImageView!
   
@@ -24,7 +25,7 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    puzzle = Puzzle(type: .Escher, difficulty: .Easy)
+    puzzle = Puzzle(type: .Classic, difficulty: .Normal)
   }
   
   override func didReceiveMemoryWarning() {
@@ -80,13 +81,20 @@ extension GameViewController: UICollectionViewDataSource {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
     guard cell.tileNumber != pow(puzzle.rows, 2) else { emptyIndexPath = indexPath; return cell.empty() }
-    guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
-    
-    let image = UIImage(puzzle: puzzle)?.crop(toRect: CGRect(
-      origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
-      size: CGSize(width: cellFrame.width, height: cellFrame.height)))
-    
-    cell.puzzlePieceImageView.image = image
+    if puzzle.puzzleType == .Classic {
+      hintButton.enabled = false
+      cell.tileNumberLabel.hidden = false
+      cell.backgroundColor = .randomColor()
+    } else {
+      hintButton.enabled = true
+      guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
+      
+      let image = UIImage(puzzle: puzzle)?.crop(toRect: CGRect(
+        origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
+        size: CGSize(width: cellFrame.width, height: cellFrame.height)))
+      
+      cell.puzzlePieceImageView.image = image
+    }
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

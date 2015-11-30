@@ -46,7 +46,7 @@
                                                     <rect key="frame" x="118" y="71" width="64" height="158"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="132"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -122,6 +122,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hintButton" destination="omV-nu-aJf" id="cwI-dc-ws8"/>
                         <outlet property="puzzleCollectionView" destination="yaX-A2-MfE" id="t5t-X2-o21"/>
                         <outlet property="solvedImageView" destination="wPh-Ax-7sV" id="zsC-sG-lLh"/>
                     </connections>

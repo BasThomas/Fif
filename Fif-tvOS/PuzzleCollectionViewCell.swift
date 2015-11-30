@@ -23,11 +23,14 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   }
   
   override func awakeFromNib() {
-    if debug { tileNumberLabel.hidden = false }
+    tileNumberLabel.hidden = !debug
   }
   
   override func prepareForReuse() {
     super.prepareForReuse()
+    puzzlePieceImageView.image = nil
+    backgroundColor = nil
+    tileNumberLabel.hidden = !debug
     userInteractionEnabled = true
   }
   
@@ -38,10 +41,12 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   }
   
   func focus() {
+    backgroundColor = backgroundColor?.colorWithAlphaComponent(0.5)
     puzzlePieceImageView.alpha = 0.5
   }
   
   func unfocus() {
+    backgroundColor = backgroundColor?.colorWithAlphaComponent(1.0)
     puzzlePieceImageView.alpha = 1.0
   }
 }

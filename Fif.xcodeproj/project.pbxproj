@@ -47,6 +47,8 @@
 		49CF66D71C089098007A9A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66D51C089098007A9A8A /* Main.storyboard */; };
 		49CF66D91C089098007A9A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66D81C089098007A9A8A /* Assets.xcassets */; };
 		49CF66DC1C089098007A9A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CF66DA1C089098007A9A8A /* LaunchScreen.storyboard */; };
+		49F1C51D1C0B19D4002F2FF5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1C51C1C0B19D4002F2FF5 /* UIColor+Extension.swift */; };
+		49F1C51E1C0B19D7002F2FF5 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1C51C1C0B19D4002F2FF5 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,7 @@
 		49CF66D81C089098007A9A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49CF66DB1C089098007A9A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49CF66DD1C089098007A9A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F1C51C1C0B19D4002F2FF5 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,8 +248,9 @@
 				49C6EAA41C09B3E700F142FF /* Int+Extension.swift */,
 				4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */,
 				490048311C093A3D00CD08E0 /* NSIndexPath+Extension.swift */,
-				4981BA681C0891EF005D83E4 /* Math.swift */,
 				491CCD621C0A4E130026192D /* String+Extension.swift */,
+				49F1C51C1C0B19D4002F2FF5 /* UIColor+Extension.swift */,
+				4981BA681C0891EF005D83E4 /* Math.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -350,9 +354,11 @@
 				TargetAttributes = {
 					496E16331C0A23CE001CB058 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = DS9YSG6KS8;
 					};
 					49ADD96C1C024C53008D9B91 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = DS9YSG6KS8;
 					};
 					49CF66CE1C089098007A9A8A = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -436,6 +442,7 @@
 				4981BA7A1C0892A0005D83E4 /* AppDelegate.swift in Sources */,
 				490048321C093A3D00CD08E0 /* NSIndexPath+Extension.swift in Sources */,
 				491CCD631C0A4E130026192D /* String+Extension.swift in Sources */,
+				49F1C51D1C0B19D4002F2FF5 /* UIColor+Extension.swift in Sources */,
 				4981BA691C0891EF005D83E4 /* Math.swift in Sources */,
 				4981BA6B1C0891FB005D83E4 /* Constants.swift in Sources */,
 				496E16101C09E241001CB058 /* Hintable.swift in Sources */,
@@ -458,6 +465,7 @@
 				4981BA7D1C0893FA005D83E4 /* GameViewController.swift in Sources */,
 				49C6EAE71C09DDE600F142FF /* UICollectionView+Extension.swift in Sources */,
 				49C6EAE61C09DDE400F142FF /* NSIndexPath+Extension.swift in Sources */,
+				49F1C51E1C0B19D7002F2FF5 /* UIColor+Extension.swift in Sources */,
 				4981BA7F1C089411005D83E4 /* PuzzleCollectionViewCell.swift in Sources */,
 				4981BA6E1C089204005D83E4 /* UIImage+Extension.swift in Sources */,
 			);
@@ -504,11 +512,14 @@
 		496E163F1C0A23CE001CB058 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "Fif-tvOS-Top-Shelf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS.TopShelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -516,10 +527,13 @@
 		496E16401C0A23CE001CB058 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Fif-tvOS-Top-Shelf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS.TopShelf";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -610,6 +624,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Fif-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -623,6 +638,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Fif-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -24,6 +24,7 @@ enum PuzzleType: String {
   case Escher
   case ElCapitan
   case MountainRange
+  case Classic
 }
 
 enum Difficulty: Int {

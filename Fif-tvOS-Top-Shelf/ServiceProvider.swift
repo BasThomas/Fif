@@ -31,7 +31,7 @@ extension ServiceProvider: TVTopShelfProvider {
     
     let featuredPuzzles = [
       Puzzle(type: .MountainRange, difficulty: .Easy),
-      Puzzle(type: .Escher, difficulty: .Normal),
+      Puzzle(type: .Classic, difficulty: .Normal),
       Puzzle(type: .ElCapitan, difficulty: .Hard)
     ]
     

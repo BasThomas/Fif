@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct Constant {
-  struct ReuseIdentifier {
+enum Constant {
+  enum ReuseIdentifier {
     static let puzzlePiece = "puzzlePiece"
   }
   
-  struct Web {
+  enum Web {
     static let baseURL = "http://basbroek.nl/fif/"
   }
   
-  struct Application {
+  enum Application {
     static let baseURL = "Fif://"
   }
   
-  struct Image {
-    struct Extension {
+  enum Image {
+    enum Extension {
       static let jpg = ".jpg"
     }
   }

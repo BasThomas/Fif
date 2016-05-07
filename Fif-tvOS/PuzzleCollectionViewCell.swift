@@ -17,12 +17,16 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   
   var tileNumber: Int = -1 {
     didSet {
-      guard tileNumber != -1 else { tileNumberLabel.text = nil; return }
+      guard tileNumber != -1 else {
+        tileNumberLabel.text = nil
+        return
+      }
       tileNumberLabel.text = "\(tileNumber)"
     }
   }
   
   override func awakeFromNib() {
+    super.awakeFromNib()
     tileNumberLabel.hidden = !debug
   }
   

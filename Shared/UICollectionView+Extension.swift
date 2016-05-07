@@ -38,7 +38,7 @@ extension UICollectionView {
     return touchingIndexPaths
   }
   
-  func swap(indexPath firstIndexPath: NSIndexPath, withIndexPath secondIndexPath: NSIndexPath, completionHandler: ((Bool -> Void)?)) -> Bool {
+  func swap(indexPath firstIndexPath: NSIndexPath, withIndexPath secondIndexPath: NSIndexPath, completionHandler: ((swapped: Bool) -> Void)? = nil) -> Bool {
     guard firstIndexPath.adjacent(toIndexPath: secondIndexPath, inCollectionView: self) else { return false }
     self.performBatchUpdates( {
       self.moveItemAtIndexPath(firstIndexPath, toIndexPath: secondIndexPath)

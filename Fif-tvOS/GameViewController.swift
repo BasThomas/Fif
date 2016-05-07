@@ -51,10 +51,10 @@ extension GameViewController {
     
     for _ in 1...50 {
       let indexPaths = puzzleCollectionView.adjacentIndexPaths(forIndexPath: emptyIndexPath)
-      let randomTilenumber = Int.random(inRange: 0...indexPaths.count - 1)
+      let randomTilenumber = Int.random(inRange: 0..<indexPaths.count)
       let randomIndexPath = indexPaths[randomTilenumber]
       
-      guard puzzleCollectionView.swap(indexPath: randomIndexPath, withIndexPath: emptyIndexPath, completionHandler: nil) else { continue }
+      guard puzzleCollectionView.swap(indexPath: randomIndexPath, withIndexPath: emptyIndexPath) else { continue }
       emptyIndexPath = randomIndexPath
     }
     
@@ -80,7 +80,10 @@ extension GameViewController: UICollectionViewDataSource {
   func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
-    guard cell.tileNumber != pow(puzzle.rows, 2) else { emptyIndexPath = indexPath; return cell.empty() }
+    guard cell.tileNumber != pow(puzzle.rows, 2) else {
+      emptyIndexPath = indexPath
+      return cell.empty()
+    }
     if puzzle.puzzleType == .Classic {
       hintButton.enabled = false
       cell.tileNumberLabel.hidden = false

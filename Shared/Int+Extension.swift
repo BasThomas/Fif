@@ -11,13 +11,7 @@ import Foundation
 extension Int {
   
   static func random(inRange range: Range<Int>) -> Int {
-    var offset = 0
-    
-    if range.startIndex < 0   // allow negative ranges
-    {
-      offset = abs(range.startIndex)
-    }
-    
+    let offset = (range.startIndex < 0) ? abs(range.startIndex) : 0
     let min = UInt32(range.startIndex + offset)
     let max = UInt32(range.endIndex + offset)
     

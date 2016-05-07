@@ -11,17 +11,17 @@ import Foundation
 extension String {
   
   var splittedStringAtCapital: String {
-    let nsSelf = self as NSString
+    let ns = self as NSString
     var capitalized = ""
     
-    for i in 0..<self.characters.count {
-      let char = nsSelf.substringWithRange(NSRange(location: i, length: 1)) as NSString
+    for index in 0..<self.characters.count {
+      let character = ns.substringWithRange(NSRange(location: index, length: 1)) as NSString
       
-      if char.rangeOfCharacterFromSet(NSCharacterSet.uppercaseLetterCharacterSet()).location != NSNotFound && i != 0 {
+      if character.rangeOfCharacterFromSet(.uppercaseLetterCharacterSet()).location != NSNotFound && index != 0 {
         capitalized += " "
       }
       
-      capitalized += char as String
+      capitalized += character as String
     }
     
     return capitalized as String

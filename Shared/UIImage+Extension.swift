@@ -29,7 +29,7 @@ extension UIImage {
     let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
     
     UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
-    self.drawInRect(CGRect(origin: CGPointZero, size: size))
+    self.drawInRect(CGRect(origin: .zero, size: size))
     
     let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()

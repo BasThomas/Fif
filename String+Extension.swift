@@ -26,4 +26,8 @@ extension String {
     
     return capitalized as String
   }
+  
+  var localized: String {
+    return NSLocalizedString(self, comment: "")
+  }
 }

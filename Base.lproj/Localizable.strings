@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Fif
+
+  Created by Bas Broek on 5/7/16.
+  Copyright © 2016 Bas Broek. All rights reserved.
+*/
+
+"Easy" = "Easy";
+"Normal" = "Normal";
+"Hard" = "Hard";
+
+"Featured Puzzles" = "Featured Puzzles";
+
+"Show hint" = "Show hint";
+"Shuffle" = "Shuffle";

@@ -53,7 +53,7 @@ extension ServiceProvider: TVTopShelfProvider {
       topShelfItems.append(contentItem)
     }
     
-    featuredPuzzlesItem.title = "Featured Puzzles"
+    featuredPuzzlesItem.title = "Featured Puzzles".localized
     featuredPuzzlesItem.topShelfItems = topShelfItems
     
     return [featuredPuzzlesItem]

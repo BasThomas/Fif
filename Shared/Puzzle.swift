@@ -27,6 +27,13 @@ enum PuzzleType: String {
   case Classic
 }
 
+extension PuzzleType: CustomStringConvertible {
+  
+  var description: String {
+    return self.rawValue.localized
+  }
+}
+
 enum Difficulty: Int {
   case Easy = 3
   case Normal = 4
@@ -39,11 +46,11 @@ extension Difficulty: CustomStringConvertible {
   var description: String {
     switch self {
     case .Easy:
-      return "Easy"
+      return "Easy".localized
     case .Normal:
-      return "Normal"
+      return "Normal".localized
     case .Hard:
-      return "Hard"
+      return "Hard".localized
     }
   }
 }

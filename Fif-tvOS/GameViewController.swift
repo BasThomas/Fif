@@ -10,7 +10,16 @@ import UIKit
 
 class GameViewController: UIViewController {
   
-  @IBOutlet weak var hintButton: UIButton!
+  @IBOutlet weak var hintButton: UIButton! {
+    didSet {
+      hintButton.setTitle("Show hint".localized, forState: .Normal)
+    }
+  }
+  @IBOutlet weak var shuffleButton: UIButton! {
+    didSet {
+      shuffleButton.setTitle("Shuffle".localized, forState: .Normal)
+    }
+  }
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
   @IBOutlet weak var solvedImageView: UIImageView!
   

@@ -24,10 +24,10 @@ extension ServiceProvider: TVTopShelfProvider {
   }
   
   var topShelfItems: [TVContentItem] {
+    var topShelfItems: [TVContentItem] = []
     guard let
       featuredPuzzlesID = TVContentIdentifier(identifier: "top-shelf-wrapper", container: nil),
-      featuredPuzzlesItem = TVContentItem(contentIdentifier: featuredPuzzlesID) else { return [] }
-    var _topShelfItems: [TVContentItem] = []
+      featuredPuzzlesItem = TVContentItem(contentIdentifier: featuredPuzzlesID) else { return topShelfItems }
     
     let featuredPuzzles = [
       Puzzle(type: .MountainRange, difficulty: .Easy),
@@ -50,11 +50,11 @@ extension ServiceProvider: TVTopShelfProvider {
       contentItem.displayURL = contentURL
       contentItem.playURL = contentURL
       
-      _topShelfItems.append(contentItem)
+      topShelfItems.append(contentItem)
     }
     
     featuredPuzzlesItem.title = "Featured Puzzles"
-    featuredPuzzlesItem.topShelfItems = _topShelfItems
+    featuredPuzzlesItem.topShelfItems = topShelfItems
     
     return [featuredPuzzlesItem]
   }

@@ -1,17 +1,9 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "tv",
       "filename" : "tvOS-ElCapitan.jpg",
       "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {

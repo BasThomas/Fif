@@ -27,30 +27,30 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    tileNumberLabel.hidden = !debug
+    tileNumberLabel.isHidden = !debug
   }
   
   override func prepareForReuse() {
     super.prepareForReuse()
     puzzlePieceImageView.image = nil
     backgroundColor = nil
-    tileNumberLabel.hidden = !debug
-    userInteractionEnabled = true
+    tileNumberLabel.isHidden = !debug
+    isUserInteractionEnabled = true
   }
   
   func empty() {
-    userInteractionEnabled = false
+    isUserInteractionEnabled = false
     puzzlePieceImageView.image = nil
     tileNumber = -1
   }
   
   func focus() {
-    backgroundColor = backgroundColor?.colorWithAlphaComponent(0.5)
+    backgroundColor = backgroundColor?.withAlphaComponent(0.5)
     puzzlePieceImageView.alpha = 0.5
   }
   
   func unfocus() {
-    backgroundColor = backgroundColor?.colorWithAlphaComponent(1.0)
+    backgroundColor = backgroundColor?.withAlphaComponent(1.0)
     puzzlePieceImageView.alpha = 1.0
   }
 }
@@ -58,13 +58,14 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
 // MARK: - UIFocusEnvironment
 extension PuzzleCollectionViewCell {
   
-  override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
-    coordinator.addCoordinatedAnimations({
-      if self.focused {
+  override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+    coordinator.addCoordinatedAnimations({ [weak self] in
+      guard let `self` = self else { return }
+      if self.isFocused {
         self.focus()
       } else {
         self.unfocus()
       }
-    }, completion: nil)
+    })
   }
 }

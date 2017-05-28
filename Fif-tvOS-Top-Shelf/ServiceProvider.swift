@@ -20,33 +20,33 @@ class ServiceProvider: NSObject {
 extension ServiceProvider: TVTopShelfProvider {
   
   var topShelfStyle: TVTopShelfContentStyle {
-    return .Sectioned
+    return .sectioned
   }
   
   var topShelfItems: [TVContentItem] {
     var topShelfItems: [TVContentItem] = []
-    guard let
-      featuredPuzzlesID = TVContentIdentifier(identifier: "top-shelf-wrapper", container: nil),
-      featuredPuzzlesItem = TVContentItem(contentIdentifier: featuredPuzzlesID) else { return topShelfItems }
+    guard
+      let featuredPuzzlesID = TVContentIdentifier(identifier: "top-shelf-wrapper", container: nil),
+      let featuredPuzzlesItem = TVContentItem(contentIdentifier: featuredPuzzlesID) else { return topShelfItems }
     
     let featuredPuzzles = [
-      Puzzle(type: .MountainRange, difficulty: .Easy),
-      Puzzle(type: .Classic, difficulty: .Normal),
-      Puzzle(type: .ElCapitan, difficulty: .Hard)
+      Puzzle(type: .mountainRange, difficulty: .easy),
+      Puzzle(type: .classic, difficulty: .normal),
+      Puzzle(type: .elCapitan, difficulty: .hard)
     ]
     
-    for (index, puzzle) in featuredPuzzles.enumerate() {
+    for (index, puzzle) in featuredPuzzles.enumerated() {
       let puzzleName = puzzle.puzzleType.rawValue
-      guard let
-        contentIdentifier = TVContentIdentifier(identifier: "top-shelf-\(index)", container: featuredPuzzlesID),
-        contentItem = TVContentItem(contentIdentifier: contentIdentifier),
-        imageURL = NSURL(string: "\(Constant.Web.baseURL)\(puzzleName.lowercaseString)\(Constant.Image.Extension.jpg)") else { continue }
+      guard
+        let contentIdentifier = TVContentIdentifier(identifier: "top-shelf-\(index)", container: featuredPuzzlesID),
+        let contentItem = TVContentItem(contentIdentifier: contentIdentifier),
+        let imageURL = URL(string: "\(Constant.Web.baseURL)\(puzzleName.lowercased())\(Constant.Image.Extension.jpg)") else { continue }
       
       contentItem.imageURL = imageURL
-      contentItem.imageShape = .Square
+      contentItem.imageShape = .square
       contentItem.title = "[\(puzzle.difficulty)] \(puzzleName.splittedStringAtCapital)"
       
-      let contentURL = NSURL(string: "\(Constant.Application.baseURL)puzzle/\(puzzleName)/\(puzzle.difficulty.rawValue)")
+      let contentURL = URL(string: "\(Constant.Application.baseURL)puzzle/\(puzzleName)/\(puzzle.difficulty.rawValue)")
       contentItem.displayURL = contentURL
       contentItem.playURL = contentURL
       

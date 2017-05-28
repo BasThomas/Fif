@@ -12,45 +12,46 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var puzzlePieceImageView: UIImageView!
   
-  var tileNumber: Int = -1
+  var tileNumber = -1
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    userInteractionEnabled = true
+    isUserInteractionEnabled = true
   }
   
   func empty() {
-    userInteractionEnabled = false
-    puzzlePieceImageView.backgroundColor = .whiteColor()
+    isUserInteractionEnabled = false
+    puzzlePieceImageView.backgroundColor = .white
     puzzlePieceImageView.image = nil
     tileNumber = -1
   }
   
   func focus() {
-    UIView.animateWithDuration(0.8) {
+    UIView.animate(withDuration: 0.8) { [weak self] in
+      guard let `self` = self else { return }
       self.puzzlePieceImageView.alpha = 0.5
     }
   }
   
   func unfocus() {
-    UIView.animateWithDuration(0.8) {
+    UIView.animate(withDuration: 0.8) { [weak self] in
+      guard let `self` = self else { return }
       self.puzzlePieceImageView.alpha = 1.0
     }
   }
 }
 
-// MARK: - Highlight+Select
 extension PuzzleCollectionViewCell {
   
-  override var highlighted: Bool {
+  override var isHighlighted: Bool {
     didSet {
-      highlighted ? focus() : unfocus()
+      isHighlighted ? focus() : unfocus()
     }
   }
   
-  override var selected: Bool {
+  override var isSelected: Bool {
     didSet {
-      selected ? focus() : unfocus()
+      isSelected ? focus() : unfocus()
     }
   }
 }

@@ -21,10 +21,10 @@ struct Puzzle {
 }
 
 enum PuzzleType: String {
-  case Escher
-  case ElCapitan
-  case MountainRange
-  case Classic
+  case escher
+  case elCapitan
+  case mountainRange
+  case classic
 }
 
 extension PuzzleType: CustomStringConvertible {
@@ -35,9 +35,9 @@ extension PuzzleType: CustomStringConvertible {
 }
 
 enum Difficulty: Int {
-  case Easy = 3
-  case Normal = 4
-  case Hard = 5
+  case easy = 3
+  case normal = 4
+  case hard = 5
 }
 
 // MARK: - CustomStringConvertible
@@ -45,11 +45,11 @@ extension Difficulty: CustomStringConvertible {
   
   var description: String {
     switch self {
-    case .Easy:
+    case .easy:
       return "Easy".localized
-    case .Normal:
+    case .normal:
       return "Normal".localized
-    case .Hard:
+    case .hard:
       return "Hard".localized
     }
   }

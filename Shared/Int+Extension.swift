@@ -10,10 +10,10 @@ import Foundation
 
 extension Int {
   
-  static func random(inRange range: Range<Int>) -> Int {
-    let offset = (range.startIndex < 0) ? abs(range.startIndex) : 0
-    let min = UInt32(range.startIndex + offset)
-    let max = UInt32(range.endIndex + offset)
+  static func random(in range: Range<Int>) -> Int {
+    let offset = (range.lowerBound < 0) ? abs(range.lowerBound) : 0
+    let min = UInt32(range.lowerBound + offset)
+    let max = UInt32(range.upperBound + offset)
     
     return Int(min + arc4random_uniform(max - min)) - offset
   }

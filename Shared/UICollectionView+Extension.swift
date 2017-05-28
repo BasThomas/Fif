@@ -10,24 +10,24 @@ import UIKit
 
 extension UICollectionView {
   
-  func adjacentIndexPaths(forIndexPath indexPath: NSIndexPath) -> [NSIndexPath] {
-    let indexPaths = visibleCells().flatMap { indexPathForCell($0) }
-    var touchingIndexPaths: [NSIndexPath] = []
+  func adjacentIndexPaths(for indexPath: IndexPath) -> [IndexPath] {
+    let indexPaths = visibleCells.flatMap { self.indexPath(for: $0) }
+    var touchingIndexPaths: [IndexPath] = []
     
     for indexPath_ in indexPaths {
       guard indexPath_ != indexPath else { continue }
       let _indexPath = (section: indexPath_.section, row: indexPath_.row)
       switch _indexPath {
-        // NSIndexPath above
+        // IndexPath above
       case (indexPath.section - 1, indexPath.row):
         touchingIndexPaths.append(indexPath_)
-        // NSIndexPath to the left
+        // IndexPath to the left
       case (indexPath.section, indexPath.row - 1):
         touchingIndexPaths.append(indexPath_)
-        // NSIndexPath below
+        // IndexPath below
       case (indexPath.section + 1, indexPath.row):
         touchingIndexPaths.append(indexPath_)
-        // NSIndexPath to the right
+        // IndexPath to the right
       case (indexPath.section, indexPath.row + 1):
         touchingIndexPaths.append(indexPath_)
       default:
@@ -38,11 +38,12 @@ extension UICollectionView {
     return touchingIndexPaths
   }
   
-  func swap(indexPath firstIndexPath: NSIndexPath, withIndexPath secondIndexPath: NSIndexPath, completionHandler: ((swapped: Bool) -> Void)? = nil) -> Bool {
-    guard firstIndexPath.adjacent(toIndexPath: secondIndexPath, inCollectionView: self) else { return false }
-    self.performBatchUpdates( {
-      self.moveItemAtIndexPath(firstIndexPath, toIndexPath: secondIndexPath)
-      self.moveItemAtIndexPath(secondIndexPath, toIndexPath: firstIndexPath)
+  func swap(_ firstIndexPath: IndexPath, with secondIndexPath: IndexPath, completionHandler: ((Bool) -> Void)? = nil) -> Bool {
+    guard firstIndexPath.isAdjacent(to: secondIndexPath, in: self) else { return false }
+    performBatchUpdates({ [weak self] in
+      guard let `self` = self else { return }
+      self.moveItem(at: firstIndexPath, to: secondIndexPath)
+      self.moveItem(at: secondIndexPath, to: firstIndexPath)
     }, completion: completionHandler)
     
     return true

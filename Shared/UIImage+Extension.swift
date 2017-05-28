@@ -10,9 +10,11 @@ import UIKit
 
 extension UIImage {
   
-  func crop(toRect rect: CGRect) -> UIImage? {
-    guard let imageRef = CGImageCreateWithImageInRect(self.CGImage, rect) else { return nil }
-    let cropped = UIImage(CGImage: imageRef)
+  func crop(to rect: CGRect) -> UIImage? {
+    guard
+      let cgImage = cgImage,
+      let imageRef = cgImage.cropping(to: rect) else { return nil }
+    let cropped = UIImage(cgImage: imageRef)
     return cropped
   }
   
@@ -24,16 +26,16 @@ extension UIImage {
     #endif
   }
   
-  func scale(toSize size: CGSize) -> UIImage {
+  func scale(to size: CGSize) -> UIImage {
     let hasAlpha = false
     let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
     
     UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
-    self.drawInRect(CGRect(origin: .zero, size: size))
+    self.draw(in: CGRect(origin: .zero, size: size))
     
     let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
-    return scaledImage
+    return scaledImage ?? UIImage()
   }
 }

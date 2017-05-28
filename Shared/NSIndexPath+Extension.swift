@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension NSIndexPath {
+extension IndexPath {
   
-  func adjacent(toIndexPath indexPath: NSIndexPath, inCollectionView collectionView: UICollectionView) -> Bool {
-    return !collectionView.adjacentIndexPaths(forIndexPath: self).filter { $0 == indexPath }.isEmpty
+  func adjacent(to indexPath: IndexPath, in collectionView: UICollectionView) -> Bool {
+    return !collectionView.adjacentIndexPaths(for: self).filter { $0 == indexPath }.isEmpty
   }
 }

@@ -12,21 +12,21 @@ class TouchButton: UIButton {
   
   @IBOutlet weak var delegate: TouchButtonDelegate?
   
-  override func pressesBegan(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-    super.pressesBegan(presses, withEvent: event)
-    guard let presses = event?.allPresses().filter({ $0.type == .Select }) where presses.count == 1 else { return }
-    delegate?.pressBegan(self)
+  override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+    super.pressesBegan(presses, with: event)
+    guard let presses = event?.allPresses.filter({ $0.type == .select }), presses.count == 1 else { return }
+    delegate?.pressBegan(sender: self)
   }
   
-  override func pressesEnded(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-    super.pressesEnded(presses, withEvent: event)
-    guard let presses = event?.allPresses().filter({ $0.type == .Select }) where presses.count == 1 else { return }
-    delegate?.pressEnded(self)
+  override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+    super.pressesEnded(presses, with: event)
+    guard let presses = event?.allPresses.filter({ $0.type == .select }), presses.count == 1 else { return }
+    delegate?.pressEnded(sender: self)
   }
   
-  override func pressesCancelled(presses: Set<UIPress>, withEvent event: UIPressesEvent?) {
-    super.pressesCancelled(presses, withEvent: event)
-    guard let presses = event?.allPresses().filter({ $0.type == .Select }) where presses.count == 1 else { return }
-    delegate?.pressCancelled(self)
+  override func pressesCancelled(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+    super.pressesCancelled(presses, with: event)
+    guard let presses = event?.allPresses.filter({ $0.type == .select }), presses.count == 1 else { return }
+    delegate?.pressCancelled(sender: self)
   }
 }

@@ -12,12 +12,12 @@ class GameViewController: UIViewController {
   
   @IBOutlet weak var hintButton: UIButton! {
     didSet {
-      hintButton.setTitle("Show hint".localized, forState: .Normal)
+      hintButton.setTitle("Show hint".localized, for: .normal)
     }
   }
   @IBOutlet weak var shuffleButton: UIButton! {
     didSet {
-      shuffleButton.setTitle("Shuffle".localized, forState: .Normal)
+      shuffleButton.setTitle("Shuffle".localized, for: .normal)
     }
   }
   @IBOutlet weak var puzzleCollectionView: UICollectionView!
@@ -30,11 +30,11 @@ class GameViewController: UIViewController {
     }
   }
   
-  var emptyIndexPath: NSIndexPath?
+  var emptyIndexPath: IndexPath?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    puzzle = Puzzle(type: .Classic, difficulty: .Normal)
+    puzzle = Puzzle(type: .classic, difficulty: .normal)
   }
   
   override func didReceiveMemoryWarning() {
@@ -46,8 +46,8 @@ class GameViewController: UIViewController {
 extension GameViewController {
   
   func deepLink(withPuzzleName puzzleName: String, difficulty: Int) {
-    let puzzleType = PuzzleType(rawValue: puzzleName) ?? .Escher
-    let difficulty = Difficulty(rawValue: difficulty) ?? .Normal
+    let puzzleType = PuzzleType(rawValue: puzzleName) ?? .escher
+    let difficulty = Difficulty(rawValue: difficulty) ?? .normal
     puzzle = Puzzle(type: puzzleType, difficulty: difficulty)
   }
 }
@@ -59,11 +59,11 @@ extension GameViewController {
     guard var emptyIndexPath = emptyIndexPath else { return }
     
     for _ in 1...50 {
-      let indexPaths = puzzleCollectionView.adjacentIndexPaths(forIndexPath: emptyIndexPath)
+      let indexPaths = puzzleCollectionView.adjacentIndexPaths(for: emptyIndexPath)
       let randomTilenumber = Int.random(inRange: 0..<indexPaths.count)
       let randomIndexPath = indexPaths[randomTilenumber]
       
-      guard puzzleCollectionView.swap(indexPath: randomIndexPath, withIndexPath: emptyIndexPath) else { continue }
+      guard puzzleCollectionView.swap(randomIndexPath, with: emptyIndexPath) else { continue }
       emptyIndexPath = randomIndexPath
     }
     
@@ -78,30 +78,30 @@ extension GameViewController: UICollectionViewDataSource {
     return puzzle.rows
   }
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return puzzle.rows
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    return puzzleCollectionView.dequeueReusableCellWithReuseIdentifier(Constant.ReuseIdentifier.puzzlePiece, forIndexPath: indexPath)
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    return puzzleCollectionView.dequeueReusableCell(withReuseIdentifier: Constant.ReuseIdentifier.puzzlePiece, for: indexPath)
   }
   
-  func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+  func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: IndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
-    guard cell.tileNumber != pow(puzzle.rows, 2) else {
+    guard cell.tileNumber != Int(pow(Double(puzzle.rows), 2)) else {
       emptyIndexPath = indexPath
       return cell.empty()
     }
-    if puzzle.puzzleType == .Classic {
-      hintButton.enabled = false
-      cell.tileNumberLabel.hidden = false
+    if puzzle.puzzleType == .classic {
+      hintButton.isEnabled = false
+      cell.tileNumberLabel.isHidden = false
       cell.backgroundColor = .randomColor()
     } else {
-      hintButton.enabled = true
-      guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
+      hintButton.isEnabled = true
+      guard let cellFrame = collectionView.layoutAttributesForItem(at: indexPath)?.frame else { return }
       
-      let image = UIImage(puzzle: puzzle)?.crop(toRect: CGRect(
+      let image = UIImage(puzzle: puzzle)?.crop(to: CGRect(
         origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
         size: CGSize(width: cellFrame.width, height: cellFrame.height)))
       
@@ -109,10 +109,10 @@ extension GameViewController: UICollectionViewDataSource {
     }
   }
   
-  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
     guard let emptyIndexPath = emptyIndexPath else { return }
     // Check if the cell can be moved; or if it touches the emptyIndexPath.
-    collectionView.swap(indexPath: indexPath, withIndexPath: emptyIndexPath) { swapped in
+    _ = collectionView.swap(indexPath, with: emptyIndexPath) { swapped in
       guard swapped else { return }
       self.emptyIndexPath = indexPath
     }
@@ -132,20 +132,20 @@ extension GameViewController: UICollectionViewDelegate {
 extension GameViewController: TouchButtonDelegate, Hintable {
   
   func pressBegan(sender: AnyObject) {
-    showHint(sender)
+    showHint(sender: sender)
   }
   
   func pressEnded(sender: AnyObject) {
-    hideHint(sender)
+    hideHint(sender: sender)
   }
   
   func pressCancelled(sender: AnyObject) {
-    hideHint(sender)
+    hideHint(sender: sender)
   }
   
   // MARK: Actions
   func showHint(sender: AnyObject) {
-    UIView.animateWithDuration(0.7) {
+    UIView.animate(withDuration: 0.7) {
       self.solvedImageView.alpha = 1.0
       self.puzzleCollectionView.alpha = 0.0
     }
@@ -153,8 +153,8 @@ extension GameViewController: TouchButtonDelegate, Hintable {
   
   func hideHint(sender: AnyObject) {
     guard let button = sender as? TouchButton else { return }
-    button.highlighted = false
-    UIView.animateWithDuration(0.7) {
+    button.isHighlighted = false
+    UIView.animate(withDuration: 0.7) {
       self.solvedImageView.alpha = 0.0
       self.puzzleCollectionView.alpha = 1.0
     }

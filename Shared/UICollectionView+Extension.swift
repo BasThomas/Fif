@@ -10,9 +10,9 @@ import UIKit
 
 extension UICollectionView {
   
-  func adjacentIndexPaths(forIndexPath indexPath: NSIndexPath) -> [NSIndexPath] {
-    let indexPaths = visibleCells().flatMap { indexPathForCell($0) }
-    var touchingIndexPaths: [NSIndexPath] = []
+  func adjacentIndexPaths(for indexPath: IndexPath) -> [IndexPath] {
+    let indexPaths = visibleCells.flatMap { self.indexPath(for: $0) }
+    var touchingIndexPaths: [IndexPath] = []
     
     for indexPath_ in indexPaths {
       guard indexPath_ != indexPath else { continue }
@@ -38,11 +38,11 @@ extension UICollectionView {
     return touchingIndexPaths
   }
   
-  func swap(indexPath firstIndexPath: NSIndexPath, withIndexPath secondIndexPath: NSIndexPath, completionHandler: ((swapped: Bool) -> Void)? = nil) -> Bool {
-    guard firstIndexPath.adjacent(toIndexPath: secondIndexPath, inCollectionView: self) else { return false }
+  func swap(_ firstIndexPath: IndexPath, with secondIndexPath: IndexPath, completionHandler: ((Bool) -> Void)? = nil) -> Bool {
+    guard firstIndexPath.adjacent(to: secondIndexPath, in: self) else { return false }
     self.performBatchUpdates( {
-      self.moveItemAtIndexPath(firstIndexPath, toIndexPath: secondIndexPath)
-      self.moveItemAtIndexPath(secondIndexPath, toIndexPath: firstIndexPath)
+      self.moveItem(at: firstIndexPath, to: secondIndexPath)
+      self.moveItem(at: secondIndexPath, to: firstIndexPath)
     }, completion: completionHandler)
     
     return true

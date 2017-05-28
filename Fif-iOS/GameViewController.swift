@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    puzzle = Puzzle(type: .MountainRange, difficulty: .Easy)
+    puzzle = Puzzle(type: .mountainRange, difficulty: .easy)
     
     // Dirty auto-layout fix, for now.
     view.removeConstraint(bottomConstraint)
@@ -54,29 +54,29 @@ extension GameViewController: UICollectionViewDataSource {
     return puzzle.rows
   }
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return puzzle.rows
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    return puzzleCollectionView.dequeueReusableCellWithReuseIdentifier(Constant.ReuseIdentifier.puzzlePiece, forIndexPath: indexPath)
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    return puzzleCollectionView.dequeueReusableCell(withReuseIdentifier: Constant.ReuseIdentifier.puzzlePiece, for: indexPath)
   }
   
-  func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
-    guard cell.tileNumber != pow(puzzle.rows, 2) else { return cell.empty() }
-    guard let cellFrame = collectionView.layoutAttributesForItemAtIndexPath(indexPath)?.frame else { return }
-    let image = UIImage(puzzle: puzzle)?.scale(toSize: cellFrame.size).crop(toRect: CGRect(
+    guard cell.tileNumber != Int(pow(Double(puzzle.rows), Double(2))) else { return cell.empty() }
+    guard let cellFrame = collectionView.layoutAttributesForItem(at: indexPath)?.frame else { return }
+    let image = UIImage(puzzle: puzzle)?.scale(to: cellFrame.size).crop(to: CGRect(
       origin: CGPoint(x: cellFrame.minX, y: cellFrame.minY),
       size: CGSize(width: cellFrame.width, height: cellFrame.height)))
     
     cell.puzzlePieceImageView.image = image
   }
   
-  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    collectionView.deselectItemAtIndexPath(indexPath, animated: false)
-    guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? PuzzleCollectionViewCell else { return }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    collectionView.deselectItem(at: indexPath, animated: false)
+    guard let cell = collectionView.cellForItem(at: indexPath) as? PuzzleCollectionViewCell else { return }
     print(cell.tileNumber)
   }
 }
@@ -93,7 +93,7 @@ extension GameViewController: UICollectionViewDelegate {
 // MARK: - UIContentContainer
 extension GameViewController {
   
-  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     view.setNeedsUpdateConstraints()
   }
 }
@@ -103,9 +103,9 @@ private extension GameViewController {
   
   func updatePosition() {
     guard let windowSize = view.window?.bounds.size else { return }
-    let higher = windowSize.height > windowSize.width
+    let isHigher = windowSize.height > windowSize.width
     
-    if higher {
+    if isHigher {
       view.removeConstraints([bottomConstraint, topConstraint, centerXConstraint])
       leadingConstraint.constant = 0.0
       trailingConstraint.constant = 0.0
@@ -117,6 +117,6 @@ private extension GameViewController {
   }
   
   var currentOrientation: UIDeviceOrientation {
-    return UIDevice.currentDevice().orientation
+    return UIDevice.current.orientation
   }
 }

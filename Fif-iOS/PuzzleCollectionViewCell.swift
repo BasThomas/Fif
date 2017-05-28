@@ -41,7 +41,6 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
   }
 }
 
-// MARK: - Highlight+Select
 extension PuzzleCollectionViewCell {
   
   override var isHighlighted: Bool {

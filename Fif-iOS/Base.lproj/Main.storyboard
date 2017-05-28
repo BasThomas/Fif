@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfM-Is-e6s">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfM-Is-e6s">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Fif-->
@@ -20,8 +24,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-x8-OXh">
                                 <rect key="frame" x="232" y="64" width="536" height="536"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5ah-x8-OXh" secondAttribute="height" multiplier="1:1" id="gWR-2a-bfb"/>
                                 </constraints>
@@ -41,13 +44,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDU-xX-izp">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                                    <animations/>
                                                 </imageView>
                                             </subviews>
-                                            <animations/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="RDU-xX-izp" secondAttribute="bottom" id="h1v-mg-6SP"/>
                                             <constraint firstItem="RDU-xX-izp" firstAttribute="leading" secondItem="I9Z-9r-Rk1" secondAttribute="leading" id="jbN-de-T67"/>
@@ -66,8 +65,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5ah-x8-OXh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2SG-Gr-jk6"/>
                             <constraint firstAttribute="trailing" secondItem="5ah-x8-OXh" secondAttribute="trailing" constant="232" id="38b-EW-Gpa"/>
@@ -80,7 +78,7 @@
                     <navigationItem key="navigationItem" title="Fif" id="szs-rP-BrI">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="iB1-xT-foJ">
                             <connections>
-                                <action selector="reload:" destination="BYZ-38-t0r" id="a9I-nL-8Xx"/>
+                                <action selector="reloadWithSender:" destination="BYZ-38-t0r" id="Ggp-h2-3CR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -108,7 +106,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rZP-CE-M0H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

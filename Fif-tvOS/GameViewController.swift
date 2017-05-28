@@ -36,10 +36,6 @@ class GameViewController: UIViewController {
     super.viewDidLoad()
     puzzle = Puzzle(type: .classic, difficulty: .normal)
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
 }
 
 // MARK: - Deep linking
@@ -74,7 +70,7 @@ extension GameViewController {
 // MARK: - UICollectionViewDataSource
 extension GameViewController: UICollectionViewDataSource {
   
-  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     return puzzle.rows
   }
   
@@ -86,7 +82,7 @@ extension GameViewController: UICollectionViewDataSource {
     return puzzleCollectionView.dequeueReusableCell(withReuseIdentifier: Constant.ReuseIdentifier.puzzlePiece, for: indexPath)
   }
   
-  func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: IndexPath) {
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     guard let cell = cell as? PuzzleCollectionViewCell else { return }
     cell.tileNumber = 1 + indexPath.row + (indexPath.section * puzzle.rows)
     guard cell.tileNumber != Int(pow(Double(puzzle.rows), 2)) else {
@@ -109,7 +105,7 @@ extension GameViewController: UICollectionViewDataSource {
     }
   }
   
-  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let emptyIndexPath = emptyIndexPath else { return }
     // Check if the cell can be moved; or if it touches the emptyIndexPath.
     _ = collectionView.swap(indexPath, with: emptyIndexPath) { [weak self] isSwapped in

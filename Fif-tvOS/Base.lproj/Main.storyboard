@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="499-42-d0g">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="499-42-d0g">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Delegate-->
@@ -43,11 +47,10 @@
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-D8-Q2t">
                                                     <rect key="frame" x="118" y="71" width="64" height="158"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="132"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Jgy-D8-Q2t" firstAttribute="centerX" secondItem="u6a-fc-D89" secondAttribute="centerX" id="6C6-TL-Qt7"/>
@@ -85,7 +88,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Shuffle"/>
                                 <connections>
-                                    <action selector="shuffle:" destination="499-42-d0g" eventType="primaryActionTriggered" id="IfI-L5-vaf"/>
+                                    <action selector="shuffleWithSender:" destination="499-42-d0g" eventType="primaryActionTriggered" id="M5e-9k-Yde"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-Ax-7sV">
@@ -115,7 +118,7 @@
                     <connections>
                         <outlet property="hintButton" destination="omV-nu-aJf" id="cwI-dc-ws8"/>
                         <outlet property="puzzleCollectionView" destination="yaX-A2-MfE" id="t5t-X2-o21"/>
-                        <outlet property="shuffleButton" destination="T67-Xb-3KG" id="qbd-1V-ek6"/>
+                        <outlet property="shuffleButton" destination="T67-Xb-3KG" id="2aW-zw-fBk"/>
                         <outlet property="solvedImageView" destination="wPh-Ax-7sV" id="zsC-sG-lLh"/>
                     </connections>
                 </viewController>
@@ -123,4 +126,9 @@
             <point key="canvasLocation" x="651" y="554"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

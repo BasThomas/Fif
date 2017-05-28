@@ -13,7 +13,7 @@ extension UIImage {
   func crop(to rect: CGRect) -> UIImage? {
     guard
       let cgImage = cgImage,
-      let imageRef = cgImage.cropping(to: rect) else { return nil }
+      let imageRef = cgImage.cropping(to: rect) else { print("oops"); return nil }
     let cropped = UIImage(cgImage: imageRef)
     return cropped
   }

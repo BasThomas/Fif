@@ -33,10 +33,6 @@ class GameViewController: UIViewController {
     updatePosition()
     super.updateViewConstraints()
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
 }
 
 // MARK: - Actions
@@ -50,7 +46,7 @@ extension GameViewController {
 // MARK: - UICollectionViewDataSource
 extension GameViewController: UICollectionViewDataSource {
   
-  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     return puzzle.rows
   }
   

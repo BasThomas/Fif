@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol TouchButtonDelegate: class {
-  func pressBegan(sender: AnyObject)
-  func pressEnded(sender: AnyObject)
-  func pressCancelled(sender: AnyObject)
+  func pressBegan(_ sender: Any)
+  func pressEnded(_ sender: Any)
+  func pressCancelled(_ sender: Any)
 }

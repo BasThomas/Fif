@@ -59,12 +59,13 @@ class PuzzleCollectionViewCell: UICollectionViewCell {
 extension PuzzleCollectionViewCell {
   
   override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-    coordinator.addCoordinatedAnimations({
+    coordinator.addCoordinatedAnimations({ [weak self] in
+      guard let `self` = self else { return }
       if self.isFocused {
         self.focus()
       } else {
         self.unfocus()
       }
-    }, completion: nil)
+    })
   }
 }

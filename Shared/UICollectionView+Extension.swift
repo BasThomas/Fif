@@ -18,16 +18,16 @@ extension UICollectionView {
       guard indexPath_ != indexPath else { continue }
       let _indexPath = (section: indexPath_.section, row: indexPath_.row)
       switch _indexPath {
-        // NSIndexPath above
+        // IndexPath above
       case (indexPath.section - 1, indexPath.row):
         touchingIndexPaths.append(indexPath_)
-        // NSIndexPath to the left
+        // IndexPath to the left
       case (indexPath.section, indexPath.row - 1):
         touchingIndexPaths.append(indexPath_)
-        // NSIndexPath below
+        // IndexPath below
       case (indexPath.section + 1, indexPath.row):
         touchingIndexPaths.append(indexPath_)
-        // NSIndexPath to the right
+        // IndexPath to the right
       case (indexPath.section, indexPath.row + 1):
         touchingIndexPaths.append(indexPath_)
       default:
@@ -39,8 +39,9 @@ extension UICollectionView {
   }
   
   func swap(_ firstIndexPath: IndexPath, with secondIndexPath: IndexPath, completionHandler: ((Bool) -> Void)? = nil) -> Bool {
-    guard firstIndexPath.adjacent(to: secondIndexPath, in: self) else { return false }
-    self.performBatchUpdates( {
+    guard firstIndexPath.isAdjacent(to: secondIndexPath, in: self) else { return false }
+    performBatchUpdates({ [weak self] in
+      guard let `self` = self else { return }
       self.moveItem(at: firstIndexPath, to: secondIndexPath)
       self.moveItem(at: secondIndexPath, to: firstIndexPath)
     }, completion: completionHandler)

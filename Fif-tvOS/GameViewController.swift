@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
 // MARK: - Deep linking
 extension GameViewController {
   
-  func deepLink(withPuzzleName puzzleName: String, difficulty: Int) {
+  func deepLink(with puzzleName: String, difficulty: Int) {
     let puzzleType = PuzzleType(rawValue: puzzleName) ?? .escher
     let difficulty = Difficulty(rawValue: difficulty) ?? .normal
     puzzle = Puzzle(type: puzzleType, difficulty: difficulty)
@@ -60,7 +60,7 @@ extension GameViewController {
     
     for _ in 1...50 {
       let indexPaths = puzzleCollectionView.adjacentIndexPaths(for: emptyIndexPath)
-      let randomTilenumber = Int.random(inRange: 0..<indexPaths.count)
+      let randomTilenumber = Int.random(in: 0..<indexPaths.count)
       let randomIndexPath = indexPaths[randomTilenumber]
       
       guard puzzleCollectionView.swap(randomIndexPath, with: emptyIndexPath) else { continue }
@@ -96,7 +96,7 @@ extension GameViewController: UICollectionViewDataSource {
     if puzzle.puzzleType == .classic {
       hintButton.isEnabled = false
       cell.tileNumberLabel.isHidden = false
-      cell.backgroundColor = .randomColor()
+      cell.backgroundColor = .random
     } else {
       hintButton.isEnabled = true
       guard let cellFrame = collectionView.layoutAttributesForItem(at: indexPath)?.frame else { return }
@@ -112,17 +112,19 @@ extension GameViewController: UICollectionViewDataSource {
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
     guard let emptyIndexPath = emptyIndexPath else { return }
     // Check if the cell can be moved; or if it touches the emptyIndexPath.
-    _ = collectionView.swap(indexPath, with: emptyIndexPath) { swapped in
-      guard swapped else { return }
+    _ = collectionView.swap(indexPath, with: emptyIndexPath) { [weak self] isSwapped in
+      guard
+        let `self` = self,
+        isSwapped else { return }
       self.emptyIndexPath = indexPath
     }
   }
 }
 
 // MARK: - UICollectionViewDelegate
-extension GameViewController: UICollectionViewDelegate {
+extension GameViewController: UICollectionViewDelegateFlowLayout {
   
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = puzzleCollectionView.frame.size.width / CGFloat(puzzle.rows)
     return CGSize(width: width, height: width)
   }
@@ -131,30 +133,32 @@ extension GameViewController: UICollectionViewDelegate {
 // MARK: - TouchButtonDelegate + Hintable
 extension GameViewController: TouchButtonDelegate, Hintable {
   
-  func pressBegan(sender: AnyObject) {
-    showHint(sender: sender)
+  func pressBegan(_ sender: Any) {
+    showHint(sender)
   }
   
-  func pressEnded(sender: AnyObject) {
-    hideHint(sender: sender)
+  func pressEnded(_ sender: Any) {
+    hideHint(sender)
   }
   
-  func pressCancelled(sender: AnyObject) {
-    hideHint(sender: sender)
+  func pressCancelled(_ sender: Any) {
+    hideHint(sender)
   }
   
   // MARK: Actions
-  func showHint(sender: AnyObject) {
-    UIView.animate(withDuration: 0.7) {
+  func showHint(_ sender: Any) {
+    UIView.animate(withDuration: 0.7) { [weak self] in
+      guard let `self` = self else { return }
       self.solvedImageView.alpha = 1.0
       self.puzzleCollectionView.alpha = 0.0
     }
   }
   
-  func hideHint(sender: AnyObject) {
+  func hideHint(_ sender: Any) {
     guard let button = sender as? TouchButton else { return }
     button.isHighlighted = false
-    UIView.animate(withDuration: 0.7) {
+    UIView.animate(withDuration: 0.7) { [weak self] in
+      guard let `self` = self else { return }
       self.solvedImageView.alpha = 0.0
       self.puzzleCollectionView.alpha = 1.0
     }

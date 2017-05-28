@@ -1,5 +1,5 @@
 //
-//  NSIndexPath+Extension.swift
+//  IndexPath+Extension.swift
 //  Fif
 //
 //  Created by Bas Broek on 28/11/15.
@@ -10,7 +10,7 @@ import UIKit
 
 extension IndexPath {
   
-  func adjacent(to indexPath: IndexPath, in collectionView: UICollectionView) -> Bool {
+  func isAdjacent(to indexPath: IndexPath, in collectionView: UICollectionView) -> Bool {
     return !collectionView.adjacentIndexPaths(for: self).filter { $0 == indexPath }.isEmpty
   }
 }

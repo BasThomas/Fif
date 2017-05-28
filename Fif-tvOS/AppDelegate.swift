@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let difficulty = Int(puzzleDifficulty),
       let gameViewController = window?.rootViewController as? GameViewController,
       !puzzleName.isEmpty else { return true }
-    gameViewController.deepLink(withPuzzleName: puzzleName, difficulty: difficulty)
+    gameViewController.deepLink(with: puzzleName, difficulty: difficulty)
     
     return true
   }

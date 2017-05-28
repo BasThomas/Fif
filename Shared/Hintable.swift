@@ -9,6 +9,6 @@
 import Foundation
 
 protocol Hintable {
-  func showHint(sender: AnyObject)
-  func hideHint(sender: AnyObject)
+  func showHint(_ sender: Any)
+  func hideHint(_ sender: Any)
 }

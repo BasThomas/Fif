@@ -51,7 +51,10 @@ extension ServiceProvider: TVTopShelfProvider {
       topShelfItems.append(contentItem)
     }
     
-    featuredPuzzlesItem.title = "Featured Puzzles".localized
+    featuredPuzzlesItem.title = NSLocalizedString(
+      "Featured Puzzles",
+      comment: "Featured Puzzles title in Top Shelf"
+    )
     featuredPuzzlesItem.topShelfItems = topShelfItems
     
     return [featuredPuzzlesItem]

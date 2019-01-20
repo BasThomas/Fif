@@ -30,7 +30,7 @@ enum PuzzleType: String {
 extension PuzzleType: CustomStringConvertible {
   
   var description: String {
-    return self.rawValue.localized
+    return NSLocalizedString(rawValue, comment: "")
   }
 }
 
@@ -46,11 +46,11 @@ extension Difficulty: CustomStringConvertible {
   var description: String {
     switch self {
     case .easy:
-      return "Easy".localized
+      return NSLocalizedString("Easy", comment: "Easy difficulty")
     case .normal:
-      return "Normal".localized
+      return NSLocalizedString("Normal", comment: "Normal difficulty")
     case .hard:
-      return "Hard".localized
+      return NSLocalizedString("Hard", comment: "Hard difficulty")
     }
   }
 }

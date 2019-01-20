@@ -12,12 +12,18 @@ class GameViewController: UIViewController {
   
   @IBOutlet weak var hintButton: UIButton! {
     didSet {
-      hintButton.setTitle("Show hint".localized, for: .normal)
+      hintButton.setTitle(
+        NSLocalizedString("Show Hint", comment: "Show Hint button"),
+        for: .normal
+      )
     }
   }
   @IBOutlet weak var shuffleButton: UIButton! {
     didSet {
-      shuffleButton.setTitle("Shuffle".localized, for: .normal)
+      shuffleButton.setTitle(
+        NSLocalizedString("Shuffle", comment: "Shuffle Button"),
+        for: .normal
+      )
     }
   }
   @IBOutlet weak var puzzleCollectionView: UICollectionView!

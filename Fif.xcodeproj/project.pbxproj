@@ -19,7 +19,6 @@
 		496E16371C0A23CE001CB058 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496E16361C0A23CE001CB058 /* TVServices.framework */; };
 		496E163A1C0A23CE001CB058 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496E16391C0A23CE001CB058 /* ServiceProvider.swift */; };
 		496E163E1C0A23CE001CB058 /* TopShelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 496E16341C0A23CE001CB058 /* TopShelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		496E16441C0A2541001CB058 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 496E16431C0A2541001CB058 /* Info.plist */; };
 		4981BA651C0891C3005D83E4 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA641C0891C3005D83E4 /* Puzzle.swift */; };
 		4981BA671C0891E8005D83E4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */; };
 		4981BA6B1C0891FB005D83E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981BA6A1C0891FB005D83E4 /* Constants.swift */; };
@@ -349,22 +348,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Bas Broek";
 				TargetAttributes = {
 					496E16331C0A23CE001CB058 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = T4Q499T59T;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 					};
 					49ADD96C1C024C53008D9B91 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = T4Q499T59T;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 					};
 					49CF66CE1C089098007A9A8A = {
 						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -402,7 +401,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49AFEABF1CDE74E2001892A5 /* Localizable.strings in Resources */,
-				496E16441C0A2541001CB058 /* Info.plist in Resources */,
 				49ADD97C1C024C54008D9B91 /* Main.storyboard in Resources */,
 				49ADD97E1C024C54008D9B91 /* Assets.xcassets in Resources */,
 				4981BA721C08923A005D83E4 /* Assets.xcassets in Resources */,
@@ -533,7 +531,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -548,7 +546,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -561,14 +559,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -608,14 +614,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -653,7 +667,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -670,7 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -681,12 +695,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "Fif-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -697,12 +710,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Fif-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.basbroek.Fif-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

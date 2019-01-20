@@ -14,7 +14,7 @@ extension String {
     let ns = self as NSString
     var capitalized = ""
     
-    for index in 0..<self.characters.count {
+    for index in 0..<self.count {
       let character = ns.substring(with: NSRange(location: index, length: 1)) as NSString
       
       if character.rangeOfCharacter(from: .uppercaseLetters).location != NSNotFound && index != 0 {

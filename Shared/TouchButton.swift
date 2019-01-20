@@ -17,7 +17,7 @@ class TouchButton: UIButton {
     guard
       let presses = event?.allPresses.filter({ $0.type == .select }),
       presses.count == 1 else { return }
-    delegate?.pressBegan(sender: self)
+    delegate?.pressBegan(self)
   }
   
   override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
@@ -25,7 +25,7 @@ class TouchButton: UIButton {
     guard
       let presses = event?.allPresses.filter({ $0.type == .select }),
       presses.count == 1 else { return }
-    delegate?.pressEnded(sender: self)
+    delegate?.pressEnded(self)
   }
   
   override func pressesCancelled(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
@@ -33,6 +33,6 @@ class TouchButton: UIButton {
     guard
       let presses = event?.allPresses.filter({ $0.type == .select }),
       presses.count == 1 else { return }
-    delegate?.pressCancelled(sender: self)
+    delegate?.pressCancelled(self)
   }
 }

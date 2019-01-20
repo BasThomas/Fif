@@ -11,7 +11,7 @@ import UIKit
 extension UICollectionView {
   
   func adjacentIndexPaths(for indexPath: IndexPath) -> [IndexPath] {
-    let indexPaths = visibleCells.flatMap { self.indexPath(for: $0) }
+    let indexPaths = visibleCells.compactMap { self.indexPath(for: $0) }
     var touchingIndexPaths: [IndexPath] = []
     
     for indexPath_ in indexPaths {

@@ -34,11 +34,9 @@
 		49ADD97E1C024C54008D9B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ADD97D1C024C54008D9B91 /* Assets.xcassets */; };
 		49ADD9911C025622008D9B91 /* PuzzleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */; };
 		49AFEABF1CDE74E2001892A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49AFEAC11CDE74E2001892A5 /* Localizable.strings */; };
-		49C6EAA51C09B3E700F142FF /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6EAA41C09B3E700F142FF /* Int+Extension.swift */; };
 		49C6EAE41C09DDA700F142FF /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6EAE31C09DDA700F142FF /* TouchButton.swift */; };
 		49C6EAE61C09DDE400F142FF /* IndexPath+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490048311C093A3D00CD08E0 /* IndexPath+Extension.swift */; };
 		49C6EAE71C09DDE600F142FF /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */; };
-		49C6EAE81C09DDE800F142FF /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6EAA41C09B3E700F142FF /* Int+Extension.swift */; };
 		49C6EAEA1C09DE4500F142FF /* TouchButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6EAE91C09DE4500F142FF /* TouchButtonDelegate.swift */; };
 		49CF66C51C088D97007A9A8A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66C41C088D97007A9A8A /* GameViewController.swift */; };
 		49CF66D21C089098007A9A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF66D11C089098007A9A8A /* AppDelegate.swift */; };
@@ -96,7 +94,6 @@
 		49ADD9901C025622008D9B91 /* PuzzleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleCollectionViewCell.swift; sourceTree = "<group>"; };
 		49AFEAC01CDE74E2001892A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		49AFEAC21CDE74EC001892A5 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		49C6EAA41C09B3E700F142FF /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Extension.swift"; path = "Shared/Int+Extension.swift"; sourceTree = "<group>"; };
 		49C6EAE31C09DDA700F142FF /* TouchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchButton.swift; path = Shared/TouchButton.swift; sourceTree = "<group>"; };
 		49C6EAE91C09DE4500F142FF /* TouchButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchButtonDelegate.swift; path = Shared/TouchButtonDelegate.swift; sourceTree = "<group>"; };
 		49CF66C41C088D97007A9A8A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -244,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				4981BA661C0891E8005D83E4 /* UIImage+Extension.swift */,
-				49C6EAA41C09B3E700F142FF /* Int+Extension.swift */,
 				4900482F1C09358900CD08E0 /* UICollectionView+Extension.swift */,
 				490048311C093A3D00CD08E0 /* IndexPath+Extension.swift */,
 				491CCD621C0A4E130026192D /* String+Extension.swift */,
@@ -439,7 +435,6 @@
 				4981BA651C0891C3005D83E4 /* Puzzle.swift in Sources */,
 				4981BA671C0891E8005D83E4 /* UIImage+Extension.swift in Sources */,
 				49ADD9911C025622008D9B91 /* PuzzleCollectionViewCell.swift in Sources */,
-				49C6EAA51C09B3E700F142FF /* Int+Extension.swift in Sources */,
 				4981BA7A1C0892A0005D83E4 /* AppDelegate.swift in Sources */,
 				490048321C093A3D00CD08E0 /* IndexPath+Extension.swift in Sources */,
 				491CCD631C0A4E130026192D /* String+Extension.swift in Sources */,
@@ -460,7 +455,6 @@
 				4981BA6C1C0891FB005D83E4 /* Constants.swift in Sources */,
 				496E16111C09E24A001CB058 /* Hintable.swift in Sources */,
 				491CCD651C0A4E430026192D /* String+Extension.swift in Sources */,
-				49C6EAE81C09DDE800F142FF /* Int+Extension.swift in Sources */,
 				4981BA7D1C0893FA005D83E4 /* GameViewController.swift in Sources */,
 				49C6EAE71C09DDE600F142FF /* UICollectionView+Extension.swift in Sources */,
 				49C6EAE61C09DDE400F142FF /* IndexPath+Extension.swift in Sources */,

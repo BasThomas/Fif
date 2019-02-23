@@ -25,9 +25,8 @@ extension ServiceProvider: TVTopShelfProvider {
   
   var topShelfItems: [TVContentItem] {
     var topShelfItems: [TVContentItem] = []
-    guard
-      let featuredPuzzlesID = TVContentIdentifier(identifier: "top-shelf-wrapper", container: nil),
-      let featuredPuzzlesItem = TVContentItem(contentIdentifier: featuredPuzzlesID) else { return topShelfItems }
+    let featuredPuzzlesID = TVContentIdentifier(identifier: "top-shelf-wrapper", container: nil)
+    let featuredPuzzlesItem = TVContentItem(contentIdentifier: featuredPuzzlesID)
     
     let featuredPuzzles = [
       Puzzle(type: .mountainRange, difficulty: .easy),
@@ -37,10 +36,9 @@ extension ServiceProvider: TVTopShelfProvider {
     
     for (index, puzzle) in featuredPuzzles.enumerated() {
       let puzzleName = puzzle.puzzleType.rawValue
-      guard
-        let contentIdentifier = TVContentIdentifier(identifier: "top-shelf-\(index)", container: featuredPuzzlesID),
-        let contentItem = TVContentItem(contentIdentifier: contentIdentifier),
-        let imageURL = URL(string: "\(Constant.Web.baseURL)\(puzzleName.lowercased())\(Constant.Image.Extension.jpg)") else { continue }
+      let contentIdentifier = TVContentIdentifier(identifier: "top-shelf-\(index)", container: featuredPuzzlesID)
+      let contentItem = TVContentItem(contentIdentifier: contentIdentifier)
+      guard let imageURL = URL(string: "\(Constant.Web.baseURL)\(puzzleName.lowercased())\(Constant.Image.Extension.jpg)") else { continue }
       
       contentItem.imageURL = imageURL
       contentItem.imageShape = .square
@@ -53,7 +51,10 @@ extension ServiceProvider: TVTopShelfProvider {
       topShelfItems.append(contentItem)
     }
     
-    featuredPuzzlesItem.title = "Featured Puzzles".localized
+    featuredPuzzlesItem.title = NSLocalizedString(
+      "Featured Puzzles",
+      comment: "Featured Puzzles title in Top Shelf"
+    )
     featuredPuzzlesItem.topShelfItems = topShelfItems
     
     return [featuredPuzzlesItem]
